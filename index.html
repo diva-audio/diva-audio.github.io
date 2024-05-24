@@ -1,0 +1,636 @@
+<!doctype html>
+<!--
+    Material Design Lite
+    Copyright 2015 Google Inc. All rights reserved.
+
+    Licensed under the Apache License, Version 2.0  "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    https://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License
+  -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A toolkit for measuring and reducing discrepancies in Cross-Dialectal NLP.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Multi-VALUE: Cross-Dialectal NLP</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+    <!-- Tile icon for Win8  + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+	<link rel="canonical" href="http://www.example.com/">
+	-->
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="main_style.css">
+	<link rel="stylesheet" href="styles.css">
+
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script defer src="./js/fontawesome.all.min.js"></script>
+
+	<style>
+	  #view-source {
+	      position: fixed;
+	      display: block;
+	      right: 0;
+	      bottom: 0;
+	      margin-right: 40px;
+	      margin-bottom: 40px;
+	      z-index: 900;
+	  }
+	</style>
+
+	<script>
+          function copyText() {
+	      
+              /* Copy text into clipboard */
+              navigator.clipboard.writeText
+              (`@inproceedings{ziems-etal-2022-multi-value,
+	  title = "Multi-VALUE: Evaluating Cross-dialectal NLP",
+	  author = "Ziems, Caleb and
+	  Held, Will and
+	  Yang, Jingfeng and
+	  Yang, Diyi"
+	  }`);
+          }
+    	</script>
+    	<script>
+	  $(document).ready(function(){
+	      $("button").click(function(){
+		  $("#clicked").fadeIn();
+		  $("#clicked").fadeOut();
+	      });
+	  });
+    	</script>
+  </head>
+  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        </div>
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+	  <img src="images/favicon.png" class="demo-avatar">
+          <h2>&nbsp&nbsp<b>Multi-VALUE:</b><br>&nbsp&nbspA toolkit for Cross-Dialectal NLP</h2>
+        </div>
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        </div>
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+          <div class="mdl-layout--small-screen-only"><span style="display:inline-block; height:100%; vertical-align:middle;"></span><img style="width: 40px; height: 40px; border-radius: 6px; vertical-align: middle;" src="images/favicon.png"></div>
+          <a href="#home" class="mdl-layout__tab is-active">Summary</a>
+          <a href="#experiments" class="mdl-layout__tab">Experiments</a>
+          <!-- <a href="#features" class="mdl-layout__tab">Features</a> -->
+          <!-- <a href="#varieties" class="mdl-layout__tab">Varieties</a> -->
+        </div>
+      </header>
+      <main class="mdl-layout__content">
+        <div class="mdl-layout__tab-panel is-active" id="home">
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4 class="panel-title">About</h4>
+		<p style="text-indent: -36px; padding-left: 36px;">⚠️&nbsp;&nbsp;&nbsp;<b>Problem:</b> Dialect differences cause performance issues for many types of users of language technologies. We show significant performance disparities in dialect QA, MT, and Semantic Parsing tasks. If we want fair and equitable NLP, system performance should be constant over dialect shifts to avoid allocative harms, which we call <i>dialect invariance</i></p>
+		
+		<p style="text-indent: -36px; padding-left: 36px;">📊&nbsp;&nbsp;&nbsp;<b>Data:</b> Multi-VALUE is a suite of resources for evaluating and achieving English dialect invariance. It contains tools for systematically modifying written text in accordance with <a href="https://ewave-atlas.org/parameters">189 attested linguistic patterns</a> from 50 varieties of English. Researchers can use this to build dialect stress tests and train more robust models for their task using data augmentation. </p>
+		<h6 style="text-align: center; width: 100%">Multi-VALUE: A Framework for Cross-Dialectal English NLP</h6>
+		<div style="display: flex; flex-wrap: wrap; padding-left: 2%; justify-content: center; width:98%;">
+		  <span class="link-block">
+		    <a href="https://aclanthology.org/2022.acl-long.258/"
+		       class="external-link button is-normal is-rounded is-dark">
+		      <span class="icon">
+			<i class="fas fa-file-pdf"></i>
+		      </span>
+		      <span>Paper</span>
+		    </a>
+		  </span>
+		  <!-- Code Link. -->
+		  <span class="link-block">
+		    <a href="https://github.com/SALT-NLP/multi-value"
+		       class="external-link button is-normal is-rounded is-dark">
+		      <span class="icon">
+			<i class="fab fa-github"></i>
+		      </span>
+		      <span>Code</span>
+		    </a>
+		  </span>
+
+		  <!-- Data Link. -->
+		  <span class="link-block">
+		    <a href="https://huggingface.co/models?sort=downloads&search=salt-nlp%20value"
+		       class="external-link button is-normal is-rounded is-dark">
+		      <span class="icon">
+			<i class="fa fa-database" aria-hidden="true"></i>
+		      </span>
+		      <span>Data</span>
+		    </a>
+            	  </span>
+		</div>
+		
+		<p style="text-indent: -36px; padding-left: 36px;">🌐&nbsp;&nbsp;&nbsp;<b>Modeling:</b> Multi-VALUE powers several plug-and-play methods to mitigate dialect discrepancies for different data scenarios. When aiming to enable a specific community of speakers, task-agnostic dialect adapters provide invariance using a small number of pairwise translations<sup>1</sup>. However, language use varies across time, place, and social scenario creating many low-data scenarios. We work towards addressing these by integrating expert linguistic knowledge into Language Models with dynamic aggregation of linguistic rules<sup>2</sup> and model adaptation using a HyperNetwork condition on eWAVE features<sup>3</sup>.</p>
+		<h6 style="text-align: center; width: 100%">Task-Agnostic Dialect Adapters for English<sup>1</sup></h6>
+		<div style="display: flex; flex-wrap: wrap; padding-left: 2%; justify-content: center; width:98%;">
+		  <span class="link-block">
+		    <a href="https://aclanthology.org/2023.findings-acl.51/"
+		       class="external-link button is-normal is-rounded is-dark">
+		      <span class="icon">
+			<i class="fas fa-file-pdf"></i>
+		      </span>
+		      <span>Paper</span>
+		    </a>
+		  </span>
+		  <!-- Code Link. -->
+		  <span class="link-block">
+		    <a href="https://github.com/Helw150/tada"
+		       class="external-link button is-normal is-rounded is-dark">
+		      <span class="icon">
+			<i class="fab fa-github"></i>
+		      </span>
+		      <span>Code</span>
+		    </a>
+		  </span>
+		  <!-- Model Link. -->
+		  <span class="link-block">
+		    <a href="https://huggingface.co/models?sort=downloads&search=WillHeld%20tada"
+		       class="external-link button is-normal is-rounded is-dark">
+		      <span class="icon">
+			<i class="fa fa-cloud" aria-hidden="true"></i>
+		      </span>
+		      <span>Models</span>
+		    </a>
+		  </span>
+		</div>
+		<h6 style="text-align: center; width: 100%">Dialect Adaptation via Dynamic Aggregation of Linguistic Rules<sup>2</sup></h6>
+		<div style="display: flex; flex-wrap: wrap; padding-left: 2%; justify-content: center; width:98%;">
+		  <span class="link-block">
+		    <a href="https://arxiv.org/abs/2305.13406"
+		       class="external-link button is-normal is-rounded is-dark">
+		      <span class="icon">
+			<i class="fas fa-file-pdf"></i>
+		      </span>
+		      <span>Paper</span>
+		    </a>
+		  </span>
+		  <!-- Code Link. -->
+		  <span class="link-block">
+		    <a href="https://github.com/SALT-NLP/DADA"
+		       class="external-link button is-normal is-rounded is-dark">
+		      <span class="icon">
+			<i class="fab fa-github"></i>
+		      </span>
+		      <span>Code</span>
+		    </a>
+		  </span>
+		  <!-- Model Link. -->
+		  <span class="link-block">
+		    <a href="https://huggingface.co/liuyanchen1015"
+		       class="external-link button is-normal is-rounded is-dark">
+		      <span class="icon">
+			<i class="fa fa-cloud" aria-hidden="true"></i>
+		      </span>
+		      <span>Models</span>
+		    </a>
+		  </span>
+		</div>
+		<div style="display: flex; flex-wrap: wrap; padding-left: 2%; justify-content: center; width:98%;">
+			    <h6 style="text-align: center; width: 100%">Task-Agnostic Low-Rank Adapters for Unseen English Dialects<sup>3</sup></h6>
+			    <span class="link-block">
+			      <a href="https://arxiv.org/abs/2311.00915"
+				 class="external-link button is-normal is-rounded is-dark">
+				<span class="icon">
+				  <i class="fas fa-file-pdf"></i>
+				</span>
+				<span>Paper</span>
+			      </a>
+			    </span>
+			    <!-- Code Link. -->
+			    <span class="link-block">
+			      <a href="https://github.com/zedian/hyperlora"
+				 class="external-link button is-normal is-rounded is-dark">
+				<span class="icon">
+				  <i class="fab fa-github"></i>
+				</span>
+				<span>Code</span>
+			      </a>
+			    </span>
+	      </div>
+
+	      
+	      <p><b>Attribution:</b> Multi-VALUE was designed and built at the <a href="https://cs.stanford.edu/~diyiy/group.html">SALT Lab</a> &#129474; at Stanford University &#127794; and the Georgia Institute of Technology &#128029. This resource draws heavily from the Electronic World Atlas of Varieties of English (<a href="https://ewave-atlas.org/">eWAVE</a>), which aggregates the work of over <a href="https://ewave-atlas.org/sources">80 field linguists</a>.</p>
+            </div>
+        </div>
+        </section>
+
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+	  <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+	    <div class="mdl-card__supporting-text">
+	      <h4 class="panel-title">What Multi-VALUE can do for you</h4>
+	      <p>In short, Multi-VALUE can produce synthetic forms of dialectal text with modular control over which linguistic features are expressed. This will allow you to systematically isolate and the effects of certain syntactic and morphological structures on the performance of English NLP systems. Research applications include:</p>
+	      <br>
+	      <div style=' margin-left: 20px; display:block'><p style="text-indent: -36px; padding-left: 36px;">&#128208;&nbsp;&nbsp;&nbsp;<b>Benchmarking:</b> ML researchers can more comprehensively evaluate task performance across domain shifts.</p></div>
+	      <br>
+	      <div style=' margin-left: 20px; display:block'><p style="text-indent: -36px; padding-left: 36px;">&#9878;&#65039;&nbsp;&nbsp;&nbsp;<b>Bias and Fairness:</b> Fairness, accountability and transparency researchers can more directly examine the ways NLP systems systematically harm disadvantaged or protected groups.</p></div><br>
+	      <div style=' margin-left: 20px; display:block'><p style="text-indent: -36px; padding-left: 36px;">&#127759;&nbsp;&nbsp;&nbsp;<b>Linguistic Typology:</b> Computational linguists can systematically understand the internal representations of large language models according to the literature on theoretical and field linguistics.</p></div><br>
+	      <div style=' margin-left: 20px; display:block'><p style="text-indent: -36px; padding-left: 36px;">&#127793;&nbsp;&nbsp;&nbsp;<b>Low-resource NLP:</b> Practitioners can adapt models to dialects which have limited labeled data by building on rich knowledge from dialectology.</p></div>
+
+            </div>
+          </div>
+        </section>
+
+	<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+	  <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+	    <div class="mdl-card__supporting-text">
+	      <h3>Getting Started</h3>
+	      <p>Use the following demo to start using Multi-VALUE.</p>
+	      <h4>Installation</h4>
+	      <pre class="language-markup mdl-cell mdl-cell--10-col">
+		<code class="language-markup">pip install value-nlp</code>
+	      </pre>
+	      <br>
+	      <br>
+	      <!-- https://pygments.org/demo/ -->
+	      <h4>Demo</h4>
+	      <div class="demo-highlight">
+		<span class="kn">from</span> <span class="nn">multivalue</span> <span class="kn">import</span> <span class="nn">Dialects</span> 
+	      </div>
+	      <div class="demo-highlight">
+		<span class="n">southern_usa</span> <span class="o">=</span> <span class="n">Dialects</span><span class="o">.</span><span class="n">SoutheastAmericanEnclaveDialect()</span><span class="p">()</span>
+	      </div>
+	      <div class="demo-highlight">
+		<span class="nb">print</span><span class="p">(</span><span class="n">southern_usa</span><span class="p">)</span>
+	      </div>
+	      <p style='font-family: "Lucida Console", "Menlo", "Monaco", "Courier", monospace; font-size: 13px;'>
+		[VECTOR DIALECT] Southeast American enclave dialects (abbr: SEAmE)<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Region: United States of America<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Latitude: 34.2<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Longitude: -80.9
+	      </p>
+	      <div class="demo-highlight">
+		<span class="n">southern_usa</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s2">"I talked with them yesterday"</span><span class="p">)</span>
+	      </div>
+	      <p style='font-family: "Lucida Console", "Menlo", "Monaco", "Courier", monospace; font-size: 13px;'>
+		'I done talked with them yesterday'
+	      </p>
+	      <div class="demo-highlight">
+		<span class="n">southern_usa</span>.</span><span class="n">executed_rules</span><span class="p"></span>
+</pre></div>
+<p style='font-family: "Lucida Console", "Menlo", "Monaco", "Courier", monospace; font-size: 13px;'>
+  {(2, 7): {'value': 'done talked','type': 'completive_done'}}
+</p>
+</div>
+</div>
+</section>
+
+
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+  <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+    <div class="mdl-card__supporting-text">
+      <h3>Important Considerations</h3>
+      <h4>Limitations</h4>
+      <div style=' margin-left: 20px; display:block'><p style="text-indent: -36px; padding-left: 36px;">&#129300;&nbsp;&nbsp;&nbsp;Multi-VALUE does <b><i>not</i> cover orthographic</b> (writing) or <b>lexical variation</b>; researchers can draw such variation from corpus data.</p></div>
+      <br>
+      <div style=' margin-left: 20px; display:block'><p style="text-indent: -36px; padding-left: 36px;">&#129300;&nbsp;&nbsp;&nbsp;Multi-VALUE covers only what linguists have observed frequently enough to document, and the <b>catalogue is incomplete.</b> Speech and communication can vary in myriad forms not captured by this resource.</p></div>
+      <br>
+      <h4>Additional Considerations</h4>
+      <p>Please keep the following points in mind when using Multi-VALUE</p>
+      <br>
+      <div style=' margin-left: 20px; display:block'><p style="text-indent: -36px; padding-left: 36px;">&#128208;&nbsp;&nbsp;&nbsp;<b>Benchmarking:</b> Dialects are not fixed or deterministic – they are living elements of the communities which speak them.</p></div>
+      <br>
+      <div style=' margin-left: 20px; display:block'><p style="text-indent: -36px; padding-left: 36px;">&#9878;&#65039;&nbsp;&nbsp;&nbsp;<b>Bias and Fairness:</b> Synthetic transformations are designed for stress-testing NLP systems and not for impersonating spoken or written dialect.</p></div><br>
+      <h4>Data Agreement</h4>
+      <p><i>I will not use Multi-VALUE for malicious purposes including not limited to: deception, impersonation, mockery, discrimination, hate speech, targeted harassment and cultural appropriation. In my use of this resource, I will respect the dignity and privacy of all people.</i></p>
+    </div>
+  </div>
+</section>
+
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+  <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+    <div class="mdl-card__supporting-text">
+      <h4 class="panel-title">References</h4>
+      <div style="display: flex; flex-wrap: wrap; width: 100%;">
+	<div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+	  <button onclick="copyText()">&#9986; &#65039;Copy to Clipboard</button><br><span id='clicked' style='display: none;'>copied</span>
+	  <pre class="language-markup"  style="height: 80%;">
+	    <code class="language-markup">@inproceedings{ziems-etal-2022-value,
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title = "{VALUE}: {U}nderstanding {D}ialect {D}isparity in {NLU}",
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;author = "Ziems, Caleb  and
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chen, Jiaao  and
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Harris, Camille  and
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anderson, Jessica  and
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yang, Diyi",
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;booktitle = "Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics",
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;month = may,
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;year = "2022",
+	      }</code>
+	  </pre>
+	</div>
+	<div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+	  <button onclick="copyText()">&#9986; &#65039;Copy to Clipboard</button><br><span id='clicked' style='display: none;'>copied</span>
+	  <pre class="language-markup" style="height: 80%;">
+	    <code class="language-markup">@inproceedings{ziems-etal-2022-multi-value,
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title = "{M}ulti-{VALUE}: {E}valuating {C}ross-dialectal {NLP}",
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;author = "Held*, William  and
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ziems*, Caleb  and
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yang, Jingfeng  and
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dhamala, Jwala  and
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gupta, Rahul  and
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yang, Diyi",
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;booktitle = "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics",
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;month = jul,
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;year = "2023",
+	      }</code>
+	  </pre>
+	</div>
+	<div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+	  <button onclick="copyText()">&#9986; &#65039;Copy to Clipboard</button><br><span id='clicked' style='display: none;'>copied</span>
+	  <pre class="language-markup" style="height: 80%;">
+	    <code class="language-markup">@inproceedings{held-etal-2023-tada,
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title = "{TADA} : {T}ask {A}gnostic {D}ialect {A}dapters for {E}nglish",
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;author = "Held, William  and
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ziems, Caleb  and
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yang, Diyi",
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;booktitle = "Findings of the Association for Computational Linguistics: ACL 2023",
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;month = jul,
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;year = "2023",
+	      }</code>
+	  </pre>
+	</div>
+	<div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+	  <button onclick="copyText()">&#9986; &#65039;Copy to Clipboard</button><br><span id='clicked' style='display: none;'>copied</span>
+	  <pre class="language-markup" style="height: 80%;">
+	    <code class="language-markup">@inproceedings{liu-etal-2023-dada,
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title = "{DADA}: {D}ialect {A}daptation via {D}ynamic {A}ggregation of {L}inguistic {R}ules",
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;author = "Liu, Yanchen  and
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Held, William  and
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yang, Diyi",
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;booktitle = "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;month = dec,
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;year = "2023",
+	      }</code>
+	  </pre>
+	</div>
+	<div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+	  <button onclick="copyText()">&#9986; &#65039;Copy to Clipboard</button><br><span id='clicked' style='display: none;'>copied</span>
+	  <pre class="language-markup" style="height: 80%;">
+	    <code class="language-markup">@inproceedings{held-etal-2023-tada,
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title = "Task-Agnostic Low-Rank Adapters for Unseen English Dialects",
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;author = "Xiao, Zedian and
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Held, William  and
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Liu, Yanchen  and
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yang, Diyi",
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;booktitle = "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;month = dec,
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;year = "2023",
+	      }</code>
+	  </pre>
+	</div>
+      </div> 
+    </div>
+  </div>
+</section>
+
+</div>
+
+<div class="mdl-layout__tab-panel" id="experiments">
+  <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+    <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+      <div class="mdl-card__supporting-text">
+        <h3>Measuring the Multi-Dialectal Gap</h3>
+	<p>We find that current NLP systems show discrepancies on dialect versions of popular benchmarks like <a href="https://stanfordnlp.github.io/coqa/">CoQA</a> Conversationsl QA, <a href="https://yale-lily.github.io/spider">Spider</a> Semantic Parsing, and <a href="http://www.statmt.org/wmt19/translation-task.html">WMT19</a> Machine translation. We report some of these discrepancies here.</p>
+      </div>
+      <div class="mdl-card__actions">
+        <a href="https://github.com/SALT-NLP/multi-value/blob/master/coqa_exp/eval_in_roberta.sh" class="mdl-button">Reproduce the Experiments</a>
+      </div>
+    </div>
+  </section>
+  <section class="section--center mdl-grid mdl-grid--no-spacing">
+    <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone"  style="overflow: auto;">
+      <div class="mdl-card__supporting-text">
+	<h4> COQA Experiments </h4>
+
+
+	<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp mdl-cell mdl-cell--16-col-desktop">
+	  <colgroup span="2"></colgroup>
+	  <colgroup span="7"></colgroup>
+	  <tr>
+	    <th colspan="2" style="border-right:1px solid black; border-bottom:1px solid black;">Model</th>
+	    <th colspan="7" scope="colgroup" style="border-bottom:1px solid black;">Test Dialect</th>
+	  </tr>
+	  <tr>
+	    <th scope="col" style="border-right:1px solid black; border-bottom:1px solid black;">Base</th>
+	    <th scope="col" style="border-right:1px solid black; border-bottom:1px solid black;">Train Set</th>
+	    <th scope="col" style="border-right:1px solid black; border-bottom:1px solid black;">SAE</th>
+	    <th scope="col" style="border-bottom:1px solid black;">AppE</th>
+	    <th scope="col" style="border-bottom:1px solid black;">ChcE</th>
+	    <th scope="col" style="border-bottom:1px solid black;">CollSgE</th>
+	    <th scope="col" style="border-bottom:1px solid black;">IndE</th>
+	    <th scope="col" style="border-right:1px solid black; border-bottom:1px solid black;">UAAVE</th>
+	    <th scope="col" style="border-bottom:1px solid black;">Average</th>
+	  </tr>
+	  <tr>
+	    <th rowspan="8" scope="rowgroup" style="border-bottom:1px solid black; border-right:1px solid black; vertical-align: middle;" >BERT Base</th>
+	    <td style="border-right:1px solid black;">SAE</td>
+	    <td style="border-right:1px solid black;">77.2</td>
+	    <td >77.4 <span style="color:#ba7a8d">(-3.8&#x25;)</span></td>
+	    <td >76.6 (-0.7&#x25;)</td>
+	    <td >61.5 <span style="color:#ba7a8d">(-25.4&#x25;)</span></td>
+	    <td >70.8 <span style="color:#ba7a8d">(-9&#x25;)</span></td>
+	    <td style="border-right:1px solid black;">71.2 <span style="color:#ba7a8d">(-8.4&#x25;)</span></td>
+	    <td >71.9 <span style="color:#ba7a8d">(-7.3&#x25;)</span></td>
+	  </tr>
+	  <tr>
+	    <td style="border-right:1px solid black;">AppE</td>
+	    <td style="border-right:1px solid black;">76.3 (-1.1&#x25;)</td>
+	    <td >76.4 (-1&#x25;)</td>
+	    <td >76.1 (-1.4&#x25;)</td>
+	    <td >64.7 <span style="color:#ba7a8d">(-19.3&#x25;)</span></td>
+	    <td >72.8 <span style="color:#ba7a8d">(-6&#x25;)</span></td>
+	    <td style="border-right:1px solid black;">73.2 <span style="color:#ba7a8d">(-5.4&#x25;)</span></td>
+	    <td >73.3 <span style="color:#ba7a8d">(-5.3&#x25;)</span></td>
+	  </tr>
+	  <tr>
+	    <td style="border-right:1px solid black;">ChcE</td>
+	    <td style="border-right:1px solid black;">76.8</td>
+	    <td >74.7 <span style="color:#ba7a8d">(-3.3&#x25;)</span></td>
+	    <td >76.5 (-0.8&#x25;)</td>
+	    <td >63.6 <span style="color:#ba7a8d">(-21.3&#x25;)</span></td>
+	    <td >71.6 <span style="color:#ba7a8d">(-7.8&#x25;)</span></td>
+	    <td style="border-right:1px solid black;">71.4 <span style="color:#ba7a8d">(-8.1&#x25;)</span></td>
+	    <td >72.4 <span style="color:#ba7a8d">(-6.5&#x25;)</span></td>
+	  </tr>
+	  <tr>
+	    <td style="border-right:1px solid black;">CollSgE</td>
+	    <td style="border-right:1px solid black;">75.7 (-1.9&#x25;)</td>
+	    <td >74.1 <span style="color:#ba7a8d">(-4.2&#x25;)</span></td>
+	    <td >75.5 (-2.2&#x25;)</td>
+	    <td >74.7 (-3.3&#x25;)</td>
+	    <td >73.6 (-4.8&#x25;)</td>
+	    <td style="border-right:1px solid black;">73.4 <span style="color:#ba7a8d">(-5.1&#x25;)</span></td>
+	    <td >74.5 (-3.6&#x25;)</td>
+	  </tr>
+	  <tr>
+	    <td style="border-right:1px solid black;">IndE</td>
+	    <td style="border-right:1px solid black;">76.0 (-1.5&#x25;)</td>
+	    <td >75.4 (-2.4&#x25;)</td>
+	    <td >75.7 (-2&#x25;)</td>
+	    <td >63.2 <span style="color:#ba7a8d">(-22&#x25;)</span></td>
+	    <td >75.1 (-2.7&#x25;)</td>
+	    <td style="border-right:1px solid black;">74.1 (-4.1&#x25;)</td>
+	    <td >73.3 <span style="color:#ba7a8d">(-5.3&#x25;)</span></td>
+	  </tr>
+	  <tr>
+	    <td style="border-right:1px solid black;">UAAVE</td>
+	    <td style="border-right:1px solid black;">76.1 (-1.4&#x25;)</td>
+	    <td >75.6 (-2&#x25;)</td>
+	    <td >76.0 (-1.5&#x25;)</td>
+	    <td >64.6 <span style="color:#ba7a8d">(-19.5&#x25;)</span></td>
+	    <td >74.5 (-3.6&#x25;)</td>
+	    <td style="border-right:1px solid black;">75.3 (-2.5&#x25;)</td>
+	    <td >73.7 <span style="color:#ba7a8d">(-4.7&#x25;)</span></td>
+	  </tr>
+	  <tr>
+	    <td style="border-bottom:1px solid black; border-right:1px solid black;">Multi</td>
+	    <td style="border-bottom:1px solid black; border-right:1px solid black;">76.2 (-1.2&#x25;)</td>
+	    <td style="border-bottom:1px solid black;">75.6 (-2&#x25;)</td>
+	    <td style="border-bottom:1px solid black;">76.1 (-1.3&#x25;)</td>
+	    <td style="border-bottom:1px solid black;">73.7 (-4.7&#x25;)</td>
+	    <td style="border-bottom:1px solid black;">74.9 (-3.1&#x25;)</td>
+	    <td style="border-bottom:1px solid black; border-right:1px solid black;">75.1 (-2.7&#x25;)</td>
+	    <td style="border-bottom:1px solid black;">75.3 (-2.5&#x25;)</td>
+	  </tr>
+	  <tr>
+	    <td style="border-bottom:1px solid black;border-right:1px solid black;">In-Dialect</td>
+	    <td style="border-bottom:1px solid black;border-right:1px solid black;">77.2</td>
+	    <td style="border-bottom:1px solid black;">76.4 (-1&#x25;)</td>
+	    <td style="border-bottom:1px solid black;">76.5 (-0.8&#x25;)</td>
+	    <td style="border-bottom:1px solid black;">74.7 (-3.3&#x25;)</td>
+	    <td style="border-bottom:1px solid black;">75.1 (-2.7&#x25;)</td>
+	    <td style="border-bottom:1px solid black; border-right:1px solid black;">75.3 (-2.5&#x25;)</td>
+	    <td style="border-bottom:1px solid black;">75.9 (-1.7&#x25;)</td>
+	  </tr>
+	  <tr>
+	    <th rowspan="8" scope="rowgroup" style="border-right:1px solid black; vertical-align: middle;" >RoBERTa Base</th>
+	    <td style="border-right:1px solid black;">SAE</td>
+	    <td style="border-right:1px solid black;">81.8</td>
+	    <td >79.1 <span style="color:#ba7a8d">(-3.4&#x25;)</span></td>
+	    <td >81.5 (-0.3&#x25;)</td>
+	    <td >68.8 <span style="color:#ba7a8d">(-18.9&#x25;)</span></td>
+	    <td >76.1 <span style="color:#ba7a8d">(-7.5&#x25;)</span></td>
+	    <td style="border-right:1px solid black;">76.6 <span style="color:#ba7a8d">(-6.7&#x25;)</span></td>
+	    <td >77.3 <span style="color:#ba7a8d">(-5.8&#x25;)</span></td>
+	  </tr>
+	  <tr>
+	    <td style="border-right:1px solid black;">AppE</td>
+	    <td style="border-right:1px solid black;">82.0 (0.3&#x25;)</td>
+	    <td >81.8 </td>
+	    <td >81.8 </td>
+	    <td >71.2 <span style="color:#ba7a8d">(-14.9&#x25;)</span></td>
+	    <td >79.0 (-3.5&#x25;)</td>
+	    <td style="border-right:1px solid black;">79.6 (-2.8&#x25;)</td>
+	    <td >79.2 <span style="color:#ba7a8d">(-3.2&#x25;)</span></td>
+	  </tr>
+	  <tr>
+	    <td style="border-right:1px solid black;">ChcE</td>
+	    <td style="border-right:1px solid black;">81.7 (-0.1&#x25;)</td>
+	    <td >79.3 <span style="color:#ba7a8d">(-3.1&#x25;)</span></td>
+	    <td >81.5 (-0.4&#x25;)</td>
+	    <td >68.8 <span style="color:#ba7a8d">(-18.9&#x25;)</span></td>
+	    <td >76.5 <span style="color:#ba7a8d">(-7&#x25;)</span></td>
+	    <td style="border-right:1px solid black;">77.3 <span style="color:#ba7a8d">(-5.9&#x25;)</span></td>
+	    <td >77.5 <span style="color:#ba7a8d">(-5.5&#x25;)</span></td>
+	  </tr> 
+	  <tr>
+	    <td style="border-right:1px solid black;">CollSgE</td>
+	    <td style="border-right:1px solid black;">81.5 (-0.4&#x25;)</td>
+	    <td >80.1 <span style="color:#ba7a8d">(-2.2&#x25;)</span></td>
+	    <td >81.2 (-0.7&#x25;)</td>
+	    <td >80.2 (-2&#x25;)</td>
+	    <td >79.4 (-3&#x25;)</td>
+	    <td style="border-right:1px solid black;">78.7 <span style="color:#ba7a8d">(-3.9&#x25;)</span></td>
+	    <td >80.2 (-2&#x25;)</td>
+	  </tr>
+	  <tr>
+	    <td style="border-right:1px solid black;">IndE</td>
+	    <td style="border-right:1px solid black;">81.1 (-0.8&#x25;)</td>
+	    <td >80.5 (-1.5&#x25;)</td>
+	    <td >80.9 (-1.1&#x25;)</td>
+	    <td >67.2 <span style="color:#ba7a8d">(-21.7&#x25;)</span></td>
+	    <td >80.3 (-1.9&#x25;)</td>
+	    <td style="border-right:1px solid black;">79.2 <span style="color:#ba7a8d">(-3.3&#x25;)</span></td>
+	    <td >78.2 <span style="color:#ba7a8d">(-4.6&#x25;)</span></td>
+	  </tr>
+	  <tr>
+	    <td style="border-right:1px solid black;">UAAVE</td>
+	    <td style="border-right:1px solid black;">81.6 (-0.2&#x25;)</td>
+	    <td >81.1 (-0.9&#x25;)</td>
+	    <td >81.5 (-0.3&#x25;)</td>
+	    <td >69.2 <span style="color:#ba7a8d">(-18.2&#x25;)</span></td>
+	    <td >79.6 (-2.7&#x25;)</td>
+	    <td style="border-right:1px solid black;">81.1 (-0.9&#x25;)</td>
+	    <td >79.0 <span style="color:#ba7a8d">(-3.5&#x25;)</span></td>
+	  </tr>
+	  <tr>
+	    <td style="border-bottom:1px solid black; border-right:1px solid black;">Multi</td>
+	    <td style="border-bottom:1px solid black; border-right:1px solid black;">80.6 (-1.5&#x25;)</td>
+	    <td style="border-bottom:1px solid black;">80.4 (-1.7&#x25;)</td>
+	    <td style="border-bottom:1px solid black;">80.5 (-1.6&#x25;)</td>
+	    <td style="border-bottom:1px solid black;">78.5 <span style="color:#ba7a8d">(-4.2&#x25;)</span></td>
+	    <td style="border-bottom:1px solid black;">79.7 (-2.7&#x25;)</td>
+	    <td style="border-bottom:1px solid black; border-right:1px solid black;">80.0 (-2.2&#x25;)</td>
+	    <td style="border-bottom:1px solid black;">80.0 (-2.3&#x25;)</td>
+	  </tr>
+	  <tr>
+	    <td style="border-right:1px solid black;">In-Dialect</td>
+	    <td style="border-right:1px solid black;">81.8</td>
+	    <td>81.8</td>
+	    <td >81.5 (-0.4&#x25;)</td>
+	    <td >80.2 (-2&#x25;)</td>
+	    <td >80.3 (-1.9&#x25;)</td>
+	    <td style="border-right:1px solid black;">81.1 (-0.9&#x25;)</td>
+	    <td >81.1 (-0.9&#x25;)</td>
+	  </tr>
+	</table>
+      </div>
+    </div>
+  </section>
+</div>
+<footer class="mdl-mega-footer">
+  <div class="mdl-mega-footer--middle-section">
+    <div class="mdl-mega-footer--bottom-section">
+      <div class="mdl-logo">
+	Credits
+      </div>
+      <ul class="mdl-mega-footer--link-list">
+	<li><a href="https://developers.google.com/web/starter-kit/">Template: MDL Web Starter Kit</a></li>
+      </ul>
+    </div>
+</footer>
+</main>
+</div>
+<script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+</body>
+</html>
