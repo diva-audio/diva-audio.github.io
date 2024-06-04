@@ -341,7 +341,7 @@
           <h2 class="title is-3">Benchmarks of <span class="SAsE">SAsE</span> Knowledge</h2>
           <h4 class="title is-4">Lexical</h4>
           <p>
-            Existing benchmarks do not cover all of the reported challenge categories and notably omit stand-alone lexical variation! To address this gap, we create an instrinsic assessment of lexical understanding by pulling 724 stand-alone dialect terms from Wiktionary to address challenge #1. We pull an additional 317 loanwords from other South Asian Englishes to address challenge #2.
+            Existing benchmarks do not cover all of the reported challenge categories and notably omit stand-alone lexical variation! To address this gap, we create an instrinsic assessment of lexical understanding by pulling 724 stand-alone dialect terms from Wiktionary to address challenge #1. We pull an additional 317 loanwords from other South Asian Englishes to address challenge #2. e format these terms as multiple choice questions where the correct definition is placed alongside three incorrect definitions. The correct definition is the one provided by Wiktionary, while the incorrect definitions are randomly sampled from definitions of other terms.  
           </p>
 
           <div class="image-section" style="text-align: center;">
@@ -350,7 +350,7 @@
         
           <h4 class="title is-4">Syntactic</h4>
           <p>
-            To address challenge #3, we create a minimal-pair syntactic language evaluation with 110 sentences aligned between <span class="SAsE">SAsE</span> and <span class="SAmE">SAmE</span> augmented with aligned negative examples with syntax not attested in <span class="SAsE">SAsE</span> using rule-based transformations.
+            To address challenge #3, we create a minimal-pair syntactic language evaluation with 110 sentences aligned between <span class="SAsE">SAsE</span> and <span class="SAmE">SAmE</span> augmented with aligned negative examples with syntax not attested in <span class="SAsE">SAsE</span> using rule-based transformations. The expectation is that the model should assign higher probability to the sentence which demonstrates syntax which has been attested in Indian English than it does to the sentence which does not demonstrate any acceptable SAsE syntax.
           </p>
           <div class="image-section" style="text-align: center;">
             <img src="./static/images/benchmark_syn.png" alt="make_graphic_syntactic" style="max-width: 80%; height: auto; display: block; margin-left: auto; margin-right: auto; margin-bottom: 50px;">
