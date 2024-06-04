@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Perceptions of Language Technology Failures
+        from South Asian English Speakers">
+  <meta name="keywords" content="Dialect, HCI, Survey, Linguistic Diversity, Fairness, Human-Centered NLP">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perceptions of Language Technology Failures
+    from South Asian English Speakers</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+  <style>
+
+    .SAmE {
+        color: #D55E00; /* myorange */
+        font-family: monospace;
+        font-weight: bold;
+    }
+    .SAsE {
+        color: #2F5596; /* mydarkblue */
+        font-family: monospace;
+        font-weight: bold;
+    }
+    .highlight {
+        background-color: #F9CD69;
+        font-weight: bold;
+    }
+    .quote {
+      color: #073ea2;
+      font-style: italic; 
+      font-size: 1.2em;
+      max-width: 50%;
+      margin: 0 auto; 
+      font-weight: bold; 
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    table {
+      max-width: 60%;
+      border-collapse: collapse;
+      margin: 0 auto;
+      margin-top: 20px;
+      text-align: center;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      font-size: 14px;
+    }
+    th {
+      background-color: #f2f2f2;
+      color: #333;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    td:nth-child(2), td:nth-child(3) {
+      text-align: center;
+    }
+    .dashline {
+      border-top: 1px dashed #999;
+    }
+    caption {
+      caption-side: bottom;
+      font-size: 0.9em;
+      padding-top: 10px;
+      color: #555;
+    }
+    .quote-text {
+      color: #073ea2;
+      font-weight: bold;
+    }
+  </style>
+
+<body>
+  
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Perceptions of Language Technology Failures from South Asian English Speakers</h1>
+
+          <!-- <h3 class="title is-3" style="color: #990000;">Dialect Adaptation from a Fine-Grained Level</h3> -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://fayeholt.github.io/">Faye Holt*</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://williamheld.com/">Will Held*</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://cs.stanford.edu/~diyiy/">Diyi Yang</a><sup>2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Georgia Institute of Technology,</span> 
+            <span class="author-block"><sup>2</sup>Stanford Unversity</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <img src="./static/images/GeorgiaTech_RGB.png" width="250" align="absmiddle"/>  
+            </span>
+              <img src="./static/images/stanford-university-logo-2.png" width="200" align="absmiddle"/>  
+            </span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Helw150/IntrinsicDialBenchmarks"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+<!--               <span class="link-block">
+                <a href="https://github.com/SALT-NLP/DADA_data"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span> -->
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser" style="margin-bottom: 0;">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <figure class="image-container" style="text-align: center;">
+        <img src="./static/images/hero.png"
+             class="summary-image"
+             alt="summary-image"
+             style="width: 90%; display: block; margin-left: auto; margin-right: auto;">
+        <figcaption class="image-caption" style="margin-top: 8px; margin-bottom: 0px; font-size: 0.9em;">
+          We survey 78 South Asian English (<span class="SAsE">SAsE</span>) speakers on their experiences and preferences with language technology and codify user responses into core challenges. We then construct intrinsic benchmarks of <span class="SAsE">SAsE</span> knowledge to address the pain-points identified through surveying (<span class="SAsE">SAsE</span> Lexical and Indian English Syntactic understanding). We evaluate 11 families of LLMs on these benchmarks. Researchers can use this work to guide the design of inclusive NLP systems to address user wants and benchmark their own systems. 
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+           
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            English NLP systems have empirically worse performance for dialects other than Standard American English (<span class="SAmE">SAmE</span>). However, how these discrepancies impact use of language technology by speakers of non-<span class="SAmE">SAmE</span> global Englishes is not well understood. We focus on reducing this gap for South Asian Englishes (<span class="SAsE">SAsE</span>), a macro-group of regional varieties with cumulatively more speakers than <span class="SAmE">SAmE</span>, by surveying <span class="SAsE">SAsE</span> speakers about their interactions with language technology and compare their responses to a control survey of <span class="SAmE">SAmE</span> speakers. <span class="SAsE">SAsE</span> speakers are more likely to recall failures with language technology and more likely to reference specific issues with written language technology than their <span class="SAmE">SAmE</span> counterparts. Furthermore, <span class="SAsE">SAsE</span> speakers indicate that they modify both their lexicon and syntax to make technology work better, but that lexical issues are perceived as the most salient challenge. We then assess whether these issues are pervasive in more recently developed Large Language Models (LLMs), introducing two benchmarks for broader <span class="SAsE">SAsE</span> Lexical and Indian English Syntactic understanding and evaluating 11 families of LLMs on them.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Background</h2>
+          <p>
+            NLP systems are primarily designed for speakers of Standard American English (<span class="SAmE">SAmE</span>) despite English being a diverse global language with many varieties beyond <span class="SAmE">SAmE</span>.  As such, prior research has found empirically worse performance in NLP systems across dialects when compared to <span class="SAmE">SAmE</span>. However, the degree to which these discrepancies affect user experience is not well understood. This leaves open the question of whether reducing these gaps would have a noticeable and desirable impact on the speakers of these dialects. In the spirit of Blodgett et al., 2016, future work in dialect disparity should center on the lived experiences of those affected by language technology’s failures. Therefore, the next step in developing inclusive language technology is understanding non-<span class="SAmE">SAmE</span> speakers' lived experiences with NLP systems and how these experiences manifest in language technology. 
+          </p>
+
+          <figure class="image-container" style="text-align: center;">
+            <img src="./static/images/eWave.png"
+                class="summary-image"
+                alt="summary-image"
+                style="width: 50%; display: block; margin-left: auto; margin-right: auto;">
+            <figcaption class="image-caption" style="margin-top: 8px; margin-bottom: 0px; font-size: 0.9em;">
+              Global Varieties of English from <a href="https://ewave-atlas.org/" target="_blank" rel="noopener noreferrer">eWAVE</a>
+            </figcaption>
+          </figure>
+        
+          <p>
+            In the spirit of Blodgett et al., 2016, future work in dialect disparity should center on the lived experiences of those affected by language technology’s failures. Therefore, the next step in developing inclusive language technology is understanding non-<span class="SAmE">SAmE</span> speakers' lived experiences with NLP systems and how these experiences manifest in language technology. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Proposed Solution</h2>
+          <p>
+            To understand and evaluate user pain-points, we follow a mixed-methods approach of a user-centric diagnostic study of language failures, benchmark creation corresponding to reported failures, and LLM evaluation on benchmarks. We focus specifically on speakers of South Asian Englishes (<span class="SAsE">SAsE</span>) as <span class="SAsE">SAsE</span> are a macro-group of regional English varieties with collectively more speakers than <span class="SAmE">SAmE</span>. Our user-centric study surveys 78 <span class="SAsE">SAsE</span> speakers. We find that <span class="SAsE">SAsE</span> speakers are significantly more likely to recall instances of language technology overall and written tech (as opposed to speech-based tech) fails more uniquely for <span class="SAsE">SAsE</span> speakers. Further, <span class="SAsE">SAsE</span> speakers consistently mention similar challenges, allowing us to codify language failures into core categories to guide future research. 
+          </p>
+
+          <div class="quote">
+            "I think technologies should be designed
+            in a way that they are able to understand
+            ever[y] dialect." - Participant 1
+          </div>
+          
+          <p>
+            We then develop a lexical benchmark and a syntactic benchmark to assess the relevance of these challenges to start-of-the-art text-based systems that may be used to evaluate future systems for inclusivity of <span class="SAsE">SAsE</span>. These benchmarks assess understanding for 317 loanwords, 724 stand-alone dialect terms, and 110 syntactic features. Finally, we evaluate 8 families of open-source LLMs and 3 providers of closed-source LLMs.
+          </p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">User-Centric Diagnostic Study</h2>
+          <p> 
+            We extend prior work on user-centric surveying research to develop a survey to elicit how empirical NLP failures with dialect data impact user perceptions and interactions. Our survey aims to:
+          </p>
+
+          <ol>
+            <li>Quantitatively assess the differences in language technology failures between <span class="SAsE">SAsE</span> and <span class="SAmE">SAmE</span> speakers.</li>
+            <li>Gather qualitative feedback on user experiences and adaptations to better understand whether failure modes correspond to dialect usage.</li>
+          </ol>
+
+          <p>
+            We survey 78 <span class="SAsE">SAsE</span> speakers and 97 <span class="SAmE">SAmE</span> speakers (as a control) on Prolific. 
+          </p>
+
+          <h4 class="title is-4">Results</h4>
+          <p>
+            We find that a majority of both <span class="SAsE">SAsE</span> and <span class="SAmE">SAmE</span> participants recall instances when technology does not understand them well, but <span class="SAsE">SAsE</span> speakers do so 14% more often than <span class="SAmE">SAmE</span> speakers. The survey then probes participants for where they perceive technology failures. Here we find that <span class="SAsE">SAsE</span> speakers are significantly more likely than their <span class="SAmE">SAmE</span> counterparts to list at least one written technology such as ChatGPT, search engines, and Grammarly and significantly less likely to list at least one spoken technology such as Siri, Alexa, and automated phone services. This finding shows that the NLP performance failures found in prior works on text-based NLP are creating notably different user experiences for speakers of non-<span class="SAmE">SAmE</span> dialects. 
+          </p>   
+          
+          <div class="image-section" style="text-align: center;">
+            <img src="./static/images/dial_survey_comp.png" alt="survey_comparison_chart" style="max-width: 50%; height: auto; display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px;">
+          </div>
+
+          <p>
+            Using keyword analysis, we find three common challenges emerge across <span class="SAsE">SAsE</span> participants. Notably, the challenge most frequently identified by participants (failures with stand-alone dialect words) diverges from the challenges emphasized in existing research.
+          </p> 
+         
+          <table>
+            <caption>Reported challenges, corresponding keywords, and percentage of occurrences.</caption>
+            <thead>
+              <tr>
+                <th> </th>
+                <th>Challenge</th>
+                <th>Example Quote</th>
+                <th>Occurrence</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Failures with stand-alone dialect words</td>
+                <td><span class="quote-text">"[I avoid using] some slang words.
+                    ‘Buggy’ instead of ‘shopping cart’ for example." - Participant 2</span></td>
+                <td><strong>43%</strong></td>
+              </tr>
+              <tr class="dashline">
+                <td>2</td>
+                <td>Failures when switching between languages</td>
+                <td><span class="quote-text">"I want to be able to speak bilingually with technology." - Participant 7</span></td>
+                <td>18%</td>
+              </tr>
+              <tr class="dashline">
+                <td>3</td>
+                <td>Failures with colloquial dialect features</td>
+                <td><span class="quote-text">“Language in for technology is so much more formal than spoken.” - Participant 19</span></td>
+                <td>20%</td>
+              </tr>
+            </tbody>
+          </table>  
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Benchmarks of <span class="SAsE">SAsE</span> Knowledge</h2>
+          <h4 class="title is-4">Lexical</h4>
+          <p>
+            Existing benchmarks do not cover all of the reported challenge categories and notably omit stand-alone lexical variation! To address this gap, we create an instrinsic assessment of lexical understanding by pulling 724 stand-alone dialect terms from Wiktionary to address challenge #1. We pull an additional 317 loanwords from other South Asian Englishes to address challenge #2.
+          </p>
+
+          <div class="image-section" style="text-align: center;">
+            <img src="./static/images/benchmark_lexical.png" alt="make_graphic_lexical" style="max-width: 80%; height: auto; display: block; margin-left: auto; margin-right: auto; margin-bottom: 50px;">
+          </div>
+        
+          <h4 class="title is-4">Syntactic</h4>
+          <p>
+            To address challenge #3, we create a minimal-pair syntactic language evaluation with 110 sentences aligned between <span class="SAsE">SAsE</span> and <span class="SAmE">SAmE</span> augmented with aligned negative examples with syntax not attested in <span class="SAsE">SAsE</span> using rule-based transformations.
+          </p>
+          <div class="image-section" style="text-align: center;">
+            <img src="./static/images/benchmark_syn.png" alt="make_graphic_syntactic" style="max-width: 80%; height: auto; display: block; margin-left: auto; margin-right: auto; margin-bottom: 50px;">
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Evalution of LLMs</h2>
+          <h4 class="title is-4">Challenges #1 and #2</h4>
+          <p>
+            Across open-access models, 14 out of 15 models which achieve greater than 60% accuracy on the control set perform significantly worse on <span class="SAsE">SAsE</span> lexical knowledge overall. In general, models perform better on Challenge #1 with the exception of the first LLaMA models which perform better on loanwords (Challenge #2) at all scales. Furthermore, while 4 out of 6 industrial LLMs also have significantly worse performance for <span class="SAsE">SAsE</span>, GPT-4 and GPT-4-Turbo both achieve over 90% accuracy on this benchmark.  The prevalence of the significantly lower performance across evaluations of Challenges #1 and #2 provides quantitative support for surveyed user perceptions, even in recently developed systems.
+          </p>
+          
+          <div class="image-section" style="text-align: center;">
+            <img src="./static/images/dial_lex_hor.png" alt="challenge_1_and_2_figure" style="max-width: 80%; height: auto; display: block; margin-left: auto; margin-right: auto; margin-bottom: 50px;">
+          </div>
+
+          <h4 class="title is-4">Challenge #3</h4>
+          <p>
+            Challenge #3 esults are far more consistent across both model families and scales. Every model evaluated achieves near perfect results on the <span class="SAmE">SAmE</span> variant of the benchmark. Despite this, all models perform significantly worse on our <span class="SAsE">SAsE</span> benchmark with the best performance being 89% accuracy achieved by LLama 65B. The consistency of this trend across scales of both model size and training data volume indicates that scaling is unlikely to provide intrinsic understanding of valid <span class="SAsE">SAsE</span> syntax.
+          </p>
+
+          <div class="image-section" style="text-align: center;">
+            <img src="./static/images/dial_syn_hor.png" alt="challenge_3_figure" style="max-width: 80%; height: auto; display: block; margin-left: auto; margin-right: auto; margin-bottom: 50px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Key Findings!</h2>
+          <ol>
+            <li>While the majority of both groups recall issues with language technology, US-Based <span class="SAsE">SAsE</span> speakers do so 14% more often than <span class="SAmE">SAmE</span> speakers.</li>
+            <li>Differences in user experience go beyond accent. While spoken language technology more frequently causes issues for both groups, more <span class="SAsE">SAsE</span> speakers report issues with written language tech than their <span class="SAmE">SAmE</span> counterparts.</li>
+            <li>Users cite the most prescient pain-point as failures with standalone dialect words and report challenges with both words and syntax that have been attested in <span class="SAsE">SAsE</span> in free-form responses; users tend to remove such features to try and make technology work better.</li>
+            <li>Benchmark results support user perceptions, showing a performance dip in user identified challenge categories in recent LLMs. These results indicate that empirical differences in <span class="SAsE">SAsE</span> NLP performance create different perceptions of written language technologies for <span class="SAsE">SAsE</span> speakers</li>
+          </ol>
+          <p>
+            Overall, we highlight the need to center user perspectives in the design and improvement of dialect-inclusive NLP and hope this work can aid in the development of more equitable language technology.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Limitations and Ethical Considerations</h2>
+          <p>
+            As a human subjects survey, this project was reviewed and approved by the lead authors’ Institutional Review Board.
+          </p>
+
+          <p> Our study was constrained by the relatively small sample size due to the availability of participants. We also did not recruit participants outside of the US. In regards to the study of <span class="SAsE">SAsE</span> specifically, both individual varieties and speakers are influenced by many different regional, economic, and linguistic backgrounds; further research may reveal differences in user preferences between variants of <span class="SAsE">SAsE</span> and within each variety itself. We also note that neither of the authors in this study speak a variety of <span class="SAsE">SAsE</span>. This language limitation may have influenced our ability to fully understand and capture the perspectives of <span class="SAsE">SAsE</span> speaking participants. Lastly, we want to draw attention to less visible NLP systems which recommend content, target advertisements, and moderate platforms and are generally applied to users without their knowlegde. As such, surveying about user perceptions can easily underestimate the true extent of societal effects of pervasive NLP systems.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Acknowledgement</h2>
+          <p>
+            We would like to thank the reviewers and SALT lab members for their feedback, critique, and suggestions! 
+            We also thank Devyani Sharma for providing a valuable
+            reading list at the start of this research. Computing
+            resources for this project were in part provided
+            through a Stanford Institute for Human-Centered
+            Artificial Intelligence Google Cloud Credit Grant.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+      @inproceedings{,
+         title={Perceptions of Language Technology Failures
+          from South Asian English Speakers},
+         author={Faye Holt and William Held and Diyi Yang},
+         booktitle={},
+         year={2024}
+      }
+    </code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This source code of this website is borrowed from <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
