@@ -132,6 +132,12 @@ body {
   border-radius: 6px;
 }
 
+.contentbx:hover {
+    border:5px solid transparent;
+    border-color: #820000;
+    background-clip: padding-box;
+}
+
 .button {
 	background-color: #fff;
 	border-color: #dbdbdb;
@@ -1833,6 +1839,36 @@ fieldset[disabled] .button {
   }
 }
     </style>
+
+    <script>
+      function handleSurvey() { 
+        window.location.href = 'https://value-nlp.github.io/dialect-speaker-survey/';
+      } 
+      function handleMultivalue() { 
+        window.location.href = 'https://value-nlp.github.io/multivalue/';
+      } 
+      function handleDada() { 
+        window.location.href = 'https://value-nlp.github.io/dada/';
+      } 
+      function handleHyperlora() { 
+        window.location.href = 'https://value-nlp.github.io/hyperlora/';
+      } 
+      function handleCodebase() { 
+        window.location.href = 'https://github.com/SALT-NLP/multi-value';
+      } 
+      document.getElementById('survey-links').onclick = function(event) { 
+          event.stopPropagation(); 
+      }; 
+      document.getElementById('multivalue-links').onclick = function(event) { 
+          event.stopPropagation(); 
+      }; 
+      document.getElementById('dada-links').onclick = function(event) { 
+          event.stopPropagation(); 
+      }; 
+      document.getElementById('hyperlora-links').onclick = function(event) { 
+          event.stopPropagation(); 
+      }; 
+    </script>
 </head>
 <body>
   
@@ -1840,7 +1876,7 @@ fieldset[disabled] .button {
   <h1 style="text-align:center;color:white;font-size:50px;"><span style="color: #820000;font-family:Courier Prime;">value-nlp:</span> <span>A toolkit for Cross-Dialectal NLP</span></h1>
 </div>
 
-<div style="max-width: 1120px; position: relative; margin: 0 auto;">
+<div style="max-width: 1120px; position: relative; margin: 0 auto;" onclick="handleCodebase()">
   <div class="contentbx">
     <h2>What is <span style="color: #820000;font-family:Courier Prime;">value-nlp</span>?</h2>
     <!-- build dialect stress tests and train more robust models -->
@@ -1848,45 +1884,8 @@ fieldset[disabled] .button {
     <p>This package contains tools for systematically perturbing text with attested linguistic patterns from 50 varieties of English. </p>
   </div>
 </div><br>
-<div style="max-width: 1120px; position: relative; margin: 0 auto;">
-  <div class="contentbx">
-    <h2>How can I set up <span style="color: #820000;font-family:Courier Prime;">value-nlp</span>?</h2>
-    <p>Use the following demo to start using Multi-VALUE.</p>
-	  <h4>Installation</h4>
-	  <pre class="language-markup mdl-cell mdl-cell--10-col">
-      <code class="language-markup">pip install value-nlp</code>
-    </pre>
-    <h4>Demo</h4>
-    <div class="demo-highlight">
-    <span class="kn">from</span> <span class="nn">multivalue</span> <span class="kn">import</span> <span class="nn">Dialects</span> 
-    </div>
-    <div class="demo-highlight">
-      <span class="n">southern_usa</span> <span class="o">=</span> <span class="n">Dialects</span><span class="o">.</span><span class="n">SoutheastAmericanEnclaveDialect()</span><span class="p"></span>
-    </div>
-    <div class="demo-highlight">
-        <span class="nb">print</span><span class="p">(</span><span class="n">southern_usa</span><span class="p">)</span>
-    </div>
-    <p style='font-family: "Lucida Console", "Menlo", "Monaco", "Courier", monospace; font-size: 13px;'>
-      [VECTOR DIALECT] Southeast American enclave dialects (abbr: SEAmE)<br/>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Region: United States of America<br/>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Latitude: 34.2<br/>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Longitude: -80.9
-    </p>
-    <div class="demo-highlight">
-      <span class="n">southern_usa</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s2">"I talked with them yesterday"</span><span class="p">)</span>
-    </div>
-    <p style='font-family: "Lucida Console", "Menlo", "Monaco", "Courier", monospace; font-size: 13px;'>
-      'I done talked with them yesterday'
-    </p>
-    <div class="demo-highlight">
-      <span class="n">southern_usa</span>.</span><span class="n">executed_rules</span><span class="p"></span>
-    </div>
-    <p style='font-family: "Lucida Console", "Menlo", "Monaco", "Courier", monospace; font-size: 13px;'>
-      {(2, 7): {'value': 'done talked','type': 'completive_done'}}
-    </p>
-  </div>
-</div><br>
-<div style="max-width: 1120px; position: relative; margin: 0 auto;">
+
+<div style="max-width: 1120px; position: relative; margin: 0 auto;" onclick="handleCodebase()">
   <div class="contentbx">
     <h2>How can I use <span style="color: #820000;font-family:Courier Prime;">value-nlp</span>?</h2>
     <p>Researchers can use this to accomplish the following:</p> 
@@ -1898,51 +1897,51 @@ fieldset[disabled] .button {
   </div>
 </div>
 
-
 <div class="timeline">
-  <div class="container left">
-    <a href="https://value-nlp.github.io/dialect-speaker-survey/" style="text-decoration: none; color: black;" target="_blank">
+  <div class="container left" onclick="handleSurvey()">
+    <!-- <a href="https://value-nlp.github.io/dialect-speaker-survey/" style="text-decoration: none; color: black;" target="_blank"></a> -->
       <div class="contentbx">
         <h2>Perceptions of Language Technology Failures from South Asian English Speakers</h3>
-        
-        <span class="link-block">
-          <a href="https://value-nlp.github.io/dialect-speaker-survey/static/SALT_SAsE_Speaker_Survey.pdf"
-             class="external-link button is-normal is-rounded is-dark">
-            <span class="icon">
-                <i class="ai ai-arxiv"></i>
-            </span>
-            <span>arXiv</span>
-          </a>
-        </span>&nbsp;
-        <span class="link-block">
-          <a href="https://github.com/Helw150/IntrinsicDialBenchmarks"
-             class="external-link button is-normal is-rounded is-dark">
-            <span class="icon">
-              <i class="fa fa-github"></i>
-            </span>
-            <span>Code</span>
-            </a>
-        </span>&nbsp;
-        <span class="link-block">
-          <a href="https://huggingface.co/datasets/WillHeld/IntrinsicSaSEBenchmarks"
+        <div id="survey-links">
+          <span class="link-block">
+            <a href="https://value-nlp.github.io/dialect-speaker-survey/static/SALT_SAsE_Speaker_Survey.pdf"
               class="external-link button is-normal is-rounded is-dark">
-            <span class="icon">
-              <i class="fa fa-bar-chart" aria-hidden="true"></i>
-            </span>
-            <span>Datasets</span>
+              <span class="icon">
+                  <i class="ai ai-arxiv"></i>
+              </span>
+              <span>arXiv</span>
             </a>
-        </span>
+          </span>&nbsp;
+          <span class="link-block">
+            <a href="https://github.com/Helw150/IntrinsicDialBenchmarks"
+              class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="fa fa-github"></i>
+              </span>
+              <span>Code</span>
+              </a>
+          </span>&nbsp;
+          <span class="link-block">
+            <a href="https://huggingface.co/datasets/WillHeld/IntrinsicSaSEBenchmarks"
+                class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="fa fa-bar-chart" aria-hidden="true"></i>
+              </span>
+              <span>Datasets</span>
+              </a>
+          </span>
+        </div>
         <p>This user-centric NLP study shows qualitatively that language technologies are not dialect invariant. They often fail for speakers of non-standard English varieties, misunderstanding both individual words and the syntax of phrases. Compared with speakers of Standard American English (SAE), speakers of non-standard varieties report more failures with written technologies.</p>
         <div class="image-section" style="text-align: center;">
           <img src="dialect-speaker-survey/static/images/dial_survey_comp.png" alt="survey_comparison_chart" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px;">
         </div>
       </div>
-    </a>
   </div>
-  <div class="container right">
+  <div class="container right" onclick="handleMultivalue()" id="multivalue">
     <!-- <a href="https://value-nlp.github.io/multivalue/" style="text-decoration: none; color: black;" target="_blank"></a> -->
       <div class="contentbx">
         <h2>Multi-VALUE: A Framework for Cross-Dialectal English NLP</h2>
+        <div id="multivalue-links">
         <span class="link-block">
           <a href="https://arxiv.org/abs/2212.08011"
              class="external-link button is-normal is-rounded is-dark">
@@ -1970,16 +1969,18 @@ fieldset[disabled] .button {
             <span>Datasets</span>
             </a>
         </span>
+        </div>
         <p>These <span style="color: #820000;font-family:Courier Prime;">value-nlp</span> stress test experiments show quantitatively that many text-based NLP systems are not dialect invariant, with notable performance drops for widely-spoken varieties like Indian English and Colloquial Singapore English. This work also shows how to address disparities with data augmentation.</p>
         <div class="image-section" style="text-align: center;">
           <img src="multivalue/static/images/coqa_results.png" alt="survey_comparison_chart" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px;">
         </div>
       </div>
   </div>
-  <div class="container left">
+  <div class="container left" onclick="handleDada()" id="dada">
     <!-- <a href="https://value-nlp.github.io/dada/" style="text-decoration: none; color: black;" target="_blank"> -->
       <div class="contentbx">
         <h2>DADA: Dialect Adaptation via Dynamic Aggregation of Linguistic Rules</h2>
+        <div id="dada-links">
         <span class="link-block">
           <a href="https://arxiv.org/abs/2305.13406"
              class="external-link button is-normal is-rounded is-dark">
@@ -1999,16 +2000,18 @@ fieldset[disabled] .button {
             <span>Code</span>
             </a>
         </span>
+        </div>
         <p>DADA is an efficient fine-tuning method for achieving dialect invariance. This new methodology works by composing adapters which handle specific linguistic features.</p>
         <div class="image-section" style="text-align: center;">
           <img src="dada/static/images/DADA.png" alt="survey_comparison_chart" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px;">
         </div>
       </div>
   </div>
-  <div class="container right">
-    <a href="https://value-nlp.github.io/dada/" style="text-decoration: none; color: black;" target="_blank">
+  <div class="container right" onclick="handleHyperlora()" id="hyperlora">
+    <!-- <a href="https://value-nlp.github.io/hyperlora/" style="text-decoration: none; color: black;" target="_blank"></a> -->
       <div class="contentbx">
         <h2>Task-Agnostic Low-Rank Adapters for Unseen English Dialects</h2>
+        <div id="hyperlora-links">
         <span class="link-block">
           <a href="https://arxiv.org/abs/2311.00915"
              class="external-link button is-normal is-rounded is-dark">
@@ -2028,12 +2031,51 @@ fieldset[disabled] .button {
             <span>Code</span>
             </a>
         </span>
+        </div>
         <p>HyperLoRA is a parameter-efficient method for building dialect invariant NLP systems in a task-agnostic manner. HyperLoRA relies on hypernetworks to disentangle dialect-specific and cross-dialectal information.</p>
         <div class="image-section" style="text-align: center;">
           <img src="hyperlora/static/images/pipeline.png" alt="survey_comparison_chart" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px;">
         </div>
       </div>
-    </a>
+  </div>
+
+  <div style="max-width: 1120px; position: relative; margin: 0 auto;" onclick="handleCodebase()">
+    <div class="contentbx">
+      <h2>How can I set up <span style="color: #820000;font-family:Courier Prime;">value-nlp</span>?</h2>
+      <p>Use the following demo to start using Multi-VALUE.</p>
+      <h4>Installation</h4>
+      <pre class="language-markup mdl-cell mdl-cell--10-col">
+        <code class="language-markup">pip install value-nlp</code>
+      </pre>
+      <h4>Demo</h4>
+      <div class="demo-highlight">
+      <span class="kn">from</span> <span class="nn">multivalue</span> <span class="kn">import</span> <span class="nn">Dialects</span> 
+      </div>
+      <div class="demo-highlight">
+        <span class="n">southern_usa</span> <span class="o">=</span> <span class="n">Dialects</span><span class="o">.</span><span class="n">SoutheastAmericanEnclaveDialect()</span><span class="p"></span>
+      </div>
+      <div class="demo-highlight">
+          <span class="nb">print</span><span class="p">(</span><span class="n">southern_usa</span><span class="p">)</span>
+      </div>
+      <p style='font-family: "Lucida Console", "Menlo", "Monaco", "Courier", monospace; font-size: 13px;'>
+        [VECTOR DIALECT] Southeast American enclave dialects (abbr: SEAmE)<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Region: United States of America<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Latitude: 34.2<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Longitude: -80.9
+      </p>
+      <div class="demo-highlight">
+        <span class="n">southern_usa</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s2">"I talked with them yesterday"</span><span class="p">)</span>
+      </div>
+      <p style='font-family: "Lucida Console", "Menlo", "Monaco", "Courier", monospace; font-size: 13px;'>
+        'I done talked with them yesterday'
+      </p>
+      <div class="demo-highlight">
+        <span class="n">southern_usa</span>.</span><span class="n">executed_rules</span><span class="p"></span>
+      </div>
+      <p style='font-family: "Lucida Console", "Menlo", "Monaco", "Courier", monospace; font-size: 13px;'>
+        {(2, 7): {'value': 'done talked','type': 'completive_done'}}
+      </p>
+    </div>
   </div>
 </body>
 </html>
