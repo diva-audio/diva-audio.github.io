@@ -110,9 +110,24 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
+	  <img src="./static/DiVA-logo.png" alt="A Cute Small Robot with DiVA Written on It's Chest" style="height: 10vw;">
           <h1 class="title is-1 publication-title" style="margin-bottom:0"><b style="color:#820000">Di</b>stilled <b style="color:#820000">V</b>oice <b style="color:#820000">A</b>ssistant</h1>
 	        
-          <div class="column has-text-centered">
+          <div class="is-size-5 publication-authors">
+	    <span class="author-block">
+              <a href="https://williamheld.com/">Will Held</a><sup><span title="Project Lead" alt="Project Lead">*</span><span title="Georgia Institute of Technology" alt="Georgia Institute of Technology" style="z-index: 1000;">1,  </span><span alt="Stanford University" title="Stanford University" style="z-index: 1000;">3 </span></sup>,</span>
+	    <span class="author-block"><a href="https://yocodeyo.github.io/">Ella Li</a><sup><span alt="National University of Singapore" title="National University of Singapore" style="z-index: 1000;">2 </span></sup>,</span>
+	    <span class="author-block"><a href="https://michryan.com/">Michael Ryan</a><sup><span alt="Stanford University" title="Stanford University" style="z-index: 1000;">3 </span></sup>,</span>
+	    <span class="author-block"><a href="https://wyshi.github.io/">Weiyan Shi</a><sup><span alt="Stanford University" title="Stanford University" style="z-index: 1000;">3 </span></sup>,</span>
+            <span class="author-block"><a href="https://stevenyzzhang.github.io/website/">Yanzhe Zhang</a><sup><span title="Georgia Institute of Technology" alt="Georgia Institute of Technology" style="z-index: 1000;">1, </span><span alt="Stanford University" title="Stanford University" style="z-index: 1000;">3 </span></sup>,</span>
+            <span class="author-block">
+              <a href="https://cs.stanford.edu/~diyiy/">Diyi Yang</a><sup><span alt="Stanford University" title="Stanford University" style="z-index: 1000;">3 </span></sup>
+            </span>
+          </div>
+
+	    <iframe allow="microphone" style="height:75vh;width:80vw" src="https://06d2-34-170-119-192.ngrok-free.app" title="gradio demo"></iframe>
+
+	             <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
@@ -145,26 +160,6 @@
             </div>
 	  </div>
           <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://williamheld.com/">Will Held*</a><sup>1,3</sup>,</span>
-	    <br/>	    
-	    <span class="author-block"><a href="https://yocodeyo.github.io/">Ella Li</a><sup>2</sup>,</span>
-	    <span class="author-block"><a href="https://michryan.com/">Michael Ryan</a><sup>3</sup>,</span>
-	    <span class="author-block"><a href="https://wyshi.github.io/">Weiyan Shi</a><sup>3</sup>,</span>
-            <span class="author-block"><a href="https://stevenyzzhang.github.io/website/">Yanzhe Zhang</a><sup>1,3</sup>,</span>
-	    <br/>
-            <span class="author-block">
-              <a href="https://cs.stanford.edu/~diyiy/">Diyi Yang</a><sup>3</sup>
-            </span>
-          </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Georgia Institute of Technology,</span> 
-            <span class="author-block"><sup>2</sup>National University of Singapore,</span>
-            <span class="author-block"><sup>3</sup>Stanford Unversity</span>
-          </div>
-
-          <div class="is-size-5 publication-authors">
           <div class="container is-max-desktop content">
             <br>
             <h3 class="title is-3 publication-title" style="margin-bottom:0">Highlight</h3>
@@ -173,7 +168,6 @@
             <br>
             <p>We introduce DiVa, a distilled end-to-end voice assistant model.  DiVA is trained using context distillation to learn a speech encoder without degrading existing capabilities, aiming to trigger the same response the model across modalities, rather than supervised labels. This enables the use of existing large-scale ASR corpora as a proxy for massively multi-task training data while preserving the output distribution of the original model. DiVa is then trained on the English Common Voice with over 3500 hours of natural and diverse speech contributed by a global pool of volunteers. Experimental results show that DiVa outperforms existing Speech LLMs at zero-shot spoken question answering, emotion recognition, and speech translation.</p>
 	        </div>
-          <iframe allow="microphone" style="height:75vh;width:80vw" src="https://06d2-34-170-119-192.ngrok-free.app" title="gradio demo"></iframe>
         </div>
           
         </div>
