@@ -111,9 +111,8 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title" style="margin-bottom:0"><b style="color:#820000">Di</b>stilled <b style="color:#820000">V</b>oice <b style="color:#820000">A</b>ssistant</h1>
-	  <iframe allow="microphone" style="height:75vh;width:100vw" src="https://06d2-34-170-119-192.ngrok-free.app" title="gradio demo"></iframe>
-
-	  <div class="column has-text-centered">
+	        
+          <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
@@ -161,7 +160,7 @@
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Georgia Institute of Technology,</span> 
-            <span class="author-block"><sup>2</sup>National University of Singapore</span>
+            <span class="author-block"><sup>2</sup>National University of Singapore,</span>
             <span class="author-block"><sup>3</sup>Stanford Unversity</span>
           </div>
 
@@ -176,9 +175,35 @@
               <img src="./static/images/stanford-university-logo-2.png" width="200" align="absmiddle"/>  
 	    </span>
           </div>
+          <div class="container is-max-desktop content">
+            <br>
+            <h3 class="title is-3 publication-title" style="margin-bottom:0">Highlight</h3>
+            <br>
+            <p>Voice assistants such as Siri and Google Assistant often model speech and language separately. This loses information from speech and makes improving end-to-end systems more challenging. However, recent efforts to learn end-to-end Speech Large Language Models to address this often lose useful capabilities from text-only LLMs.</p>
+            <br>
+            <p>We introduce DiVa, a distilled end-to-end voice assistant model.  DiVA is trained using context distillation to learn a speech encoder without degrading existing capabilities, aiming to trigger the same response the model across modalities, rather than supervised labels. This enables the use of existing large-scale ASR corpora as a proxy for massively multi-task training data while preserving the output distribution of the original model. DiVa is then trained on the English Common Voice with over 3500 hours of natural and diverse speech contributed by a global pool of volunteers. Experimental results show that DiVa outperforms existing Speech LLMs at zero-shot spoken question answering, emotion recognition, and speech translation.</p>
+	        </div>
+          <iframe allow="microphone" style="height:75vh;width:100vw" src="https://06d2-34-170-119-192.ngrok-free.app" title="gradio demo"></iframe>
         </div>
-      </div>
+          
+        </div>
     </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h3 class="title is-3 publication-title" style="margin-bottom:0">Motivation</h3>
+    <br>
+	  <p>As Large Language Models (LLMs) capabilities increase, so does the value of transferring these capabilities to new modalities, including audio and speech. Speech interaction is an especially natural interface for language technology, with measurable efficiency gains for users. The simplest method of integrating speech with LLMs is to feed audio input to an Automatic Speech Recognition (ASR) model and produce a text transcription for the LLM to use. However, this process loses socio-phonetic information such as tone, pacing, and accent regardless of the transcription accuracy. Improving these pipelined systems also requires annotations for both transcriptions and expected outputs, increasing annotation complexity and cost.</p>
+    <br>
+    <p>Models that can accept speech directly as input have the potential to simplify and accelerate inference, reduce annotation costs, and capture the rich social information inevitably lost by ASR. In this pursuit, a variety of works have trained audio-encoders on top of LLM. These methods all utilize the same well-established approach: large-scale multitask supervised finetuning (SFT). </p>
+    <br>
+    <p>However, models trained using only SFT face several challenges. First, they often struggle to generalize to speech tasks beyond those represented in the training data, even if the base LLM can perform similar tasks in response to text. As observed in prior work (Tang et al., 2023), freezing the weights of the text-only LLM is not sufficient to address this. Since SFT data for speech is currently less abundant than for text, this means the resulting models have a comparatively limited range of capabilities.</p>
+    <br>
+    <p>On the other hand, speech corpora focused on instruction following either include only a small number of speakers or consist only of evaluation data. While some recent speech corpora have focused on diversity and representation, their open-ended conversations and monologues are unsuitable for training an instruction-following model. Reliance on SFT data thereby exacerbates under-representation of those already the least supported by speech technologies. As such, speech LMs trained with SFT risk increasing frustration with state-of-the-art speech systems and preventing their use by individuals for whom interacting with technology through speech is most valuable.</p>
+    <br>
+    <p>Our main research question is how to create a unified model for speech assistance using only ASR data, which exists at large-scales both online and in community-created corpora such as the CommonVoice. In order to achieve generalizability despite training on data from only a single task, we focus on minimizing catastrophic forgetting in an early fusion model initialized from a pretrained ASR model and LLM.</p>
   </div>
 </section>
 
@@ -186,12 +211,12 @@
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>
-	@misc{held2024diva,
-	  author="Held, Will and Zhang, Yanzhe and Ryan, Michael and Shi, Weiyan and Li, Ella and Yang, Diyi",
-	  title="Distilling an End-to-End Voice Assistant from Speech Recognition Data",
-	  year="2024",
-	  publisher="HuggingFace",
-	}
+      @misc{held2024diva,
+        author="Held, Will and Zhang, Yanzhe and Ryan, Michael and Shi, Weiyan and Li, Ella and Yang, Diyi",
+        title="Distilling an End-to-End Voice Assistant from Speech Recognition Data",
+        year="2024",
+        publisher="HuggingFace",
+      }
     </code></pre>
   </div>
 </section>
