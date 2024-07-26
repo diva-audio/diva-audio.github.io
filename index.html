@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>DiVA (Distilled Voice Assistant)</title>
-  <meta name="description" content="Distilling an End-to-End Voice Assistant from Speech Recognition Data Using Pretrained Models.">
+  <head>
+    <meta charset="utf-8">
+    <title>DiVA (Distilled Voice Assistant)</title>
+    <meta name="description" content="Distilling an End-to-End Voice Assistant from Speech Recognition Data Using Pretrained Models.">
 
-  <!-- Facebook -->
-  <meta property="og:url" content="https://value-nlp.github.io/DiVA-Demo">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="DiVA (Distilled Voice Assistant)">
-  <meta property="og:description" content="Distilling an End-to-End Voice Assistant from Speech Recognition Data Using Pretrained Models.">
-  <meta property="og:image" content="https://value-nlp.github.io/DiVA-Demo/static/images/hero.png">
+    <!-- Facebook -->
+    <meta property="og:url" content="https://value-nlp.github.io/DiVA-Demo">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="DiVA (Distilled Voice Assistant)">
+    <meta property="og:description" content="Distilling an End-to-End Voice Assistant from Speech Recognition Data Using Pretrained Models.">
+    <meta property="og:image" content="https://value-nlp.github.io/DiVA-Demo/static/images/hero.png">
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta property="twitter:domain" content="value-nlp.github.io">
-  <meta property="twitter:url" content="https://value-nlp.github.io/DiVA-Demo">
-  <meta name="twitter:title" content="DiVA (Distilled Voice Assistant)">
-  <meta name="twitter:description" content="Distilling an End-to-End Voice Assistant from Speech Recognition Data Using Pretrained Models.">
-  <meta name="twitter:image" content="https://value-nlp.github.io/DiVA-Demo/static/images/hero.png">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="value-nlp.github.io">
+    <meta property="twitter:url" content="https://value-nlp.github.io/DiVA-Demo">
+    <meta name="twitter:title" content="DiVA (Distilled Voice Assistant)">
+    <meta name="twitter:description" content="Distilling an End-to-End Voice Assistant from Speech Recognition Data Using Pretrained Models.">
+    <meta name="twitter:image" content="https://value-nlp.github.io/DiVA-Demo/static/images/hero.png">
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
 
-  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
-</head>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+  </head>
   <style>
 
     .SAmE {
@@ -56,172 +56,224 @@
         font-weight: bold;
     }
     .quote {
-      color: #073ea2;
-      font-style: italic; 
-      font-size: 1.2em;
-      max-width: 50%;
-      margin: 0 auto; 
-      font-weight: bold; 
-      margin-bottom: 20px;
-      text-align: center;
+	color: #073ea2;
+	font-style: italic; 
+	font-size: 1.2em;
+	max-width: 50%;
+	margin: 0 auto; 
+	font-weight: bold; 
+	margin-bottom: 20px;
+	text-align: center;
     }
     table {
-      max-width: 60%;
-      border-collapse: collapse;
-      margin: 0 auto;
-      margin-top: 20px;
-      text-align: center;
+	max-width: 60%;
+	border-collapse: collapse;
+	margin: 0 auto;
+	margin-top: 20px;
+	text-align: center;
     }
     th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      font-size: 14px;
+	border: 1px solid #ddd;
+	padding: 8px;
+	font-size: 14px;
     }
     th {
-      background-color: #f2f2f2;
-      color: #333;
+	background-color: #f2f2f2;
+	color: #333;
     }
     tr:nth-child(even) {
-      background-color: #f9f9f9;
+	background-color: #f9f9f9;
     }
     td:nth-child(2), td:nth-child(3) {
-      text-align: center;
+	text-align: center;
     }
     .dashline {
-      border-top: 1px dashed #999;
+	border-top: 1px dashed #999;
     }
     caption {
-      caption-side: bottom;
-      font-size: 0.9em;
-      padding-top: 10px;
-      color: #555;
+	caption-side: bottom;
+	font-size: 0.9em;
+	padding-top: 10px;
+	color: #555;
     }
     .quote-text {
-      color: #073ea2;
-      font-weight: bold;
+	color: #073ea2;
+	font-weight: bold;
     }
   </style>
 
-<body>
-  
+  <body>
+    
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title" style="margin-bottom:0">
-	  <img src="./static/DiVA-logo.png" alt="A Cute Small Robot with DiVA Written on It's Chest" style="height: 10vw;"> <b style="color:#820000">Di</b>stilled <b style"color:#820000">V</b>oice <b style="color:#820000">A</b>ssistant</h1>
-	        
-          <div class="is-size-5 publication-authors">
-	    <span class="author-block">
-              <a href="https://williamheld.com/">Will Held</a><sup><span title="Project Lead, Georgia Institute of Technology & Stanford University" alt="Project Lead, Georgia Institute of Techology & Stanford University">*</span></sup>,</span>
-	    <span class="author-block"><a href="https://yocodeyo.github.io/">Ella Li</a><sup><span title="Evaluation Co-Author, National University of Singapore" alt="Evaluation Coauthor, National University of Singapore">†<span></sup>,</span>
-	    <span class="author-block"><a href="https://michryan.com/">Michael Ryan</a><sup><span title="Evaluation Co-Author, Stanford University" alt="Evaluation Coauthor, Stanford University">†<span></sup>,</span>
-	    <span class="author-block"><a href="https://wyshi.github.io/">Weiyan Shi</a><sup><span title="Evaluation Co-Author, Stanford University" alt="Evaluation Coauthor, Stanford University">†<span></sup>,</span>
-            <span class="author-block"><a href="https://stevenyzzhang.github.io/website/">Yanzhe Zhang</a><sup><span title="Modeling Co-Author, Georgia Institute of Technology & Stanford University" alt="Modeling Coauthor, Georgia Institute of Technology & Stanford University">‡<span></sup>,</span>
-            <span class="author-block">
-              <a href="https://cs.stanford.edu/~diyiy/">Diyi Yang</a><sup><span alt="Project Advisor, Stanford University" title="Project Advisor, Stanford University" style="z-index: 1000;">** </span></sup>
-            </span>
-          </div>
-	  <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="https://huggingface.co/WillHeld/DiVA-llama-3-v0-8b"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Model Link</span>
-                </a>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://colab.research.google.com/drive/1Ab3z_BjM_FblAyne7W7hbnT6gLWOhram?usp=sharing"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-chart-bar"></i>
-                  </span>
-                  <span>Evaluation Notebook</span>
-                  </a>
-              </span>
-              <!-- Dataset Link. -->
-              <span class="link-block">
-                <a href="https://github.com/Helw150/levanter/blob/will/distill/src/levanter/models/via.py"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Training Code</span>
-                  </a>
+    <section class="hero">
+      <div class="hero-body">
+	<div class="container is-max-desktop">
+	  <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title" style="margin-bottom:0">
+		<img src="./static/DiVA-logo.png" alt="A Cute Small Robot with DiVA Written on It's Chest" style="height: 10vw;"> <b style="color:#820000">Di</b>stilled <b style"color:#820000">V</b>oice <b style="color:#820000">A</b>ssistant</h1>
+	      
+              <div class="is-size-5 publication-authors">
+		<span class="author-block">
+		  <a href="https://williamheld.com/">Will Held</a><sup><span title="Project Lead, Georgia Institute of Technology & Stanford University" alt="Project Lead, Georgia Institute of Techology & Stanford University">*</span></sup>,</span>
+		<span class="author-block"><a href="https://yocodeyo.github.io/">Ella Li</a><sup><span title="Evaluation Co-Author, National University of Singapore" alt="Evaluation Coauthor, National University of Singapore">†<span></sup>,</span>
+		  <span class="author-block"><a href="https://michryan.com/">Michael Ryan</a><sup><span title="Evaluation Co-Author, Stanford University" alt="Evaluation Coauthor, Stanford University">†<span></sup>,</span>
+		    <span class="author-block"><a href="https://wyshi.github.io/">Weiyan Shi</a><sup><span title="Evaluation Co-Author, Stanford University" alt="Evaluation Coauthor, Stanford University">†<span></sup>,</span>
+		      <span class="author-block"><a href="https://stevenyzzhang.github.io/website/">Yanzhe Zhang</a><sup><span title="Modeling Co-Author, Georgia Institute of Technology & Stanford University" alt="Modeling Coauthor, Georgia Institute of Technology & Stanford University">‡<span></sup>,</span>
+			<span class="author-block">
+			  <a href="https://cs.stanford.edu/~diyiy/">Diyi Yang</a><sup><span alt="Project Advisor, Stanford University" title="Project Advisor, Stanford University" style="z-index: 1000;">** </span></sup>
+			</span>
+              </div>
+	      <div class="column has-text-centered">
+		<div class="publication-links">
+		  <!-- PDF Link. -->
+		  <span class="link-block">
+                    <a href="https://huggingface.co/WillHeld/DiVA-llama-3-v0-8b"
+                       class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+			<i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Model Link</span>
+                    </a>
+		    <!-- Code Link. -->
+		    <span class="link-block">
+                      <a href="https://colab.research.google.com/drive/1Ab3z_BjM_FblAyne7W7hbnT6gLWOhram?usp=sharing"
+			 class="external-link button is-normal is-rounded is-dark">
+			<span class="icon">
+			  <i class="far fa-chart-bar"></i>
+			</span>
+			<span>Evaluation Notebook</span>
+                      </a>
+		    </span>
+		    <!-- Dataset Link. -->
+		    <span class="link-block">
+                      <a href="https://github.com/Helw150/levanter/blob/will/distill/src/levanter/models/via.py"
+			 class="external-link button is-normal is-rounded is-dark">
+			<span class="icon">
+			  <i class="fab fa-github"></i>
+			</span>
+			<span>Training Code</span>
+                      </a>
+		</div>
+	      </div>
+	      <section class="hero teaser">
+		<div class="container is-max-desktop">
+		  <div class="hero-body">
+		    <h4 class="subtitle has-text-centered">
+		      <span style="color: #820000">[TL;DR]</span> DiVA Llama 3 outperforms existing Speech LMs on QA, Emotion Recognition, and Translation with a speech encoder trained using only weak supervision. DiVA learns to encode speech while preserving the underlying LLM output distribution using cross-modal context distillation between text and speech. DiVA was trained with open-source code in <a href="https://crfm.stanford.edu/2023/06/16/levanter-1_0-release.html">Levanter</a> on 3.5k hours of publicly available and permissively licensed ASR data from <a href="https://commonvoice.mozilla.org/en">Common Voice</a>.
+		    </h4>
+		  </div>
+		</div>
+	      </section>
             </div>
 	  </div>
-	  <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-        <h4 class="subtitle has-text-centered">
-          <span style="color: #820000">[TL;DR]</span> DiVA Llama 3 outperforms existing Speech LMs on QA, Emotion Recognition, and Translation with a speech encoder trained using only weak supervision. Using responses to text transcripts, DiVA generalizes LLM capabilities to the Speech domain with minimal forgetting. DiVA was trained in 12 hours on a TPU-V4 Pod on the free TPU Research Cloud using Levanter using 3500 hours of publicly available and permissively licensed ASR data from the CommonVoice
-        </h4>
-      </div>
-    </div>
-  </section>
+	</div>
+    </section>
+
+    <section class="section" style="background-color:#fafaf9">
+      <div class="container is-max-desktop">
+	<!-- Abstract. -->
+	<div class="columns is-centered has-text-centered">
+          <div class="column is-six-fifths">
+            <h2 class="title is-3">Demo</h2>
+	  </div>
+	</div>
+	<div class="columns is-centered has-text-centered">
 	  <iframe allow="microphone" style="height:75vh;width:80vw" src="https://06d2-34-170-119-192.ngrok-free.app" title="gradio demo"></iframe>
-          
-        </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h3 class="title is-3 publication-title" style="margin-bottom:0">Motivation</h3>
-    <br>
-	  <p>As Large Language Models (LLMs) capabilities increase, so does the value of transferring these capabilities to new modalities, including audio and speech. Speech interaction is an especially natural interface for language technology, with measurable efficiency gains for users. The simplest method of integrating speech with LLMs is to feed audio input to an Automatic Speech Recognition (ASR) model and produce a text transcription for the LLM to use. However, this process loses socio-phonetic information such as tone, pacing, and accent regardless of the transcription accuracy. Improving these pipelined systems also requires annotations for both transcriptions and expected outputs, increasing annotation complexity and cost.</p>
-    <br>
-    <p>Models that can accept speech directly as input have the potential to simplify and accelerate inference, reduce annotation costs, and capture the rich social information inevitably lost by ASR. In this pursuit, a variety of works have trained audio-encoders on top of LLM. These methods all utilize the same well-established approach: large-scale multitask supervised finetuning (SFT). </p>
-    <br>
-    <p>However, models trained using only SFT face several challenges. First, they often struggle to generalize to speech tasks beyond those represented in the training data, even if the base LLM can perform similar tasks in response to text. As observed in prior work (Tang et al., 2023), freezing the weights of the text-only LLM is not sufficient to address this. Since SFT data for speech is currently less abundant than for text, this means the resulting models have a comparatively limited range of capabilities.</p>
-    <br>
-    <p>On the other hand, speech corpora focused on instruction following either include only a small number of speakers or consist only of evaluation data. While some recent speech corpora have focused on diversity and representation, their open-ended conversations and monologues are unsuitable for training an instruction-following model. Reliance on SFT data thereby exacerbates under-representation of those already the least supported by speech technologies. As such, speech LMs trained with SFT risk increasing frustration with state-of-the-art speech systems and preventing their use by individuals for whom interacting with technology through speech is most valuable.</p>
-    <br>
-    <p>Our main research question is how to create a unified model for speech assistance using only ASR data, which exists at large-scales both online and in community-created corpora such as the CommonVoice. In order to achieve generalizability despite training on data from only a single task, we focus on minimizing catastrophic forgetting in an early fusion model initialized from a pretrained ASR model and LLM.</p>
-  </div>
-</section>
-
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>
-      @misc{held2024diva,
-        author="Held, Will and Zhang, Yanzhe and Ryan, Michael and Shi, Weiyan and Li, Ella and Yang, Diyi",
-        title="Distilling an End-to-End Voice Assistant from Speech Recognition Data",
-        year="2024",
-        publisher="HuggingFace",
-      }
-    </code></pre>
-  </div>
-</section>
-
-
-<footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This source code of this website is borrowed from <a
-              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
-          </p>
-        </div>
+	</div>
       </div>
-    </div>
-  </div>
-</footer>
+    </section>
+    
 
-</body>
+    <section class="section" >
+      <div class="container is-max-desktop">
+	<!-- Abstract. -->
+	<div class="columns is-centered has-text-centered">
+          <div class="column is-six-fifths">
+            <h2 class="title is-3">Method</h2>
+	    
+	    <img src="./static/train.svg" alt="Description of the training pipeline. The trainable red modules are the Whisper Decoder, Query Tokens, and a Projection. The frozen Blue modules are the Whisper Encoder and all of Llama." style="width: 75vw;">
+            <div class="content has-text-justified">
+              <p>
+		Training Pipeline for Assistant Distillation, <span style="color: #B83A4B">Red</span> modules are trainable while <span style="color: #67AFD2">Blue</span> are frozen pretrained modules.
+		<br/><br/>
+
+		Large Language Models are increasingly aligned to provide a wide range of assistant capabilities, but only to text inputs. On the other hand, post-hoc early fusion with massively multitask finetuning has been <a href="https://arxiv.org/abs/2310.13289">observed to cause forgetting</a>. We merge the capabilites of an existing ASR model with an existing LLM into a single differentiable model with distillation. Similar to <a href="https://arxiv.org/abs/2209.15189">context distillation</a>, this preserves the models core capabilities while adding native speech support that simplifies and <a href="https://arxiv.org/abs/2304.08467">accelerates inference</a>.
+            </div>
+          </div>
+	</div>        
+      </div>
+    </section>
+
+    <section class="section" style="background-color:#fafaf9">
+      <div class="container is-max-desktop">
+	<!-- Abstract. -->
+	<div class="columns is-centered has-text-centered">
+          <div class="column is-six-fifths">
+            <h2 class="title is-3">Evaluation</h2>
+	    <div class="content has-text-justified">
+              <p>
+		We assess our model on knowledge focused Spoken Question Answering 
+	      </p>
+            </div>
+	    <img src="./static/qa.svg" alt="QA results on Spoken Dialect QA and HeySQUAD. DiVA significantly (0.05) outperforms SALMONN and Qwen Audio." style="height: 30vw;">
+            <div class="content has-text-justified">
+              <p>
+		Training Pipeline for Assistant Distillation, <span style="color: #B83A4B">Red</span> modules are trainable while <span style="color: #67AFD2">Blue</span> are frozen pretrained modules.
+	      </p>
+            </div>
+	    <img src="./static/translation.svg" alt="Emotion Recognition results on MELD and IEMOCAP. DiVA significantly (0.05) outperforms SALMONN and Qwen Audio." style="height: 30vw;">
+            <div class="content has-text-justified">
+              <p>
+		Training Pipeline for Assistant Distillation, <span style="color: #B83A4B">Red</span> modules are trainable while <span style="color: #67AFD2">Blue</span> are frozen pretrained modules.
+	      </p>
+            </div>
+	    <img src="./static/emote.svg" alt="Emotion Recognition results on MELD and IEMOCAP. DiVA significantly (0.05) outperforms SALMONN and Qwen Audio." style="height: 30vw;">
+            <div class="content has-text-justified">
+              <p>
+		Training Pipeline for Assistant Distillation, <span style="color: #B83A4B">Red</span> modules are trainable while <span style="color: #67AFD2">Blue</span> are frozen pretrained modules.
+	      </p>
+            </div>
+          </div>
+	</div>
+        
+      </div>
+    </section>
+
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+	<h2 class="title">BibTeX</h2>
+	<pre><code>
+	    @misc{held2024diva,
+            author="Held, Will and Li, Ella and Ryan, Michael and Shi, Weiyan and Zhang, Yanzhe and Yang, Diyi",
+            title="Distilling an End-to-End Voice Assistant from Speech Recognition Data",
+            year="2024",
+            publisher="HuggingFace",
+	    }
+	</code></pre>
+      </div>
+    </section>
+
+
+    <footer class="footer">
+      <div class="container">
+	<div class="columns is-centered">
+	  <div class="column is-8">
+            <div class="content">
+              <p>
+		This website is licensed under a <a rel="license"
+                                                    href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+		  Commons Attribution-ShareAlike 4.0 International License</a>.
+              </p>
+              <p>
+		This source code of this website is borrowed from <a
+								    href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+              </p>
+            </div>
+	  </div>
+	</div>
+      </div>
+    </footer>
+
+  </body>
 </html>
