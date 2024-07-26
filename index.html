@@ -227,13 +227,26 @@
 	    <img src="./static/translation.svg" alt="Emotion Recognition results on MELD and IEMOCAP. DiVA significantly (0.05) outperforms SALMONN and Qwen Audio." style="height: 30vw;">
             <div class="content has-text-justified">
               <p>
-		Training Pipeline for Assistant Distillation, <span style="color: #B83A4B">Red</span> modules are trainable while <span style="color: #67AFD2">Blue</span> are frozen pretrained modules.
+		Finally, we assess the speech-to-text translation capabilities of each model from English Speech to text in another language. We prompt each model with the instruction <i>Translate the input from {input_lang} to {output_lang}</i>. DiVA performs significantly better than both other models on 4 out of 7 languages. This is particularly promising both SALMONN and Qwen Audio train directly using CoVost 2 training data while DiVA is operating on the benchmark zero-shot relying only on capabilities transferred from the base LLM. Notably, Qwen Audio which performs the based on Chinese, German, and Japanese was trained with 3700 hours of speech-to-text translation data in German and Chinese, more data on just this one task than was used to train DiVA in total. 
+
+		<br/><br/>
+		
+DiVA notably performs poorly in Chinese and Japanese. Inspecting outputs and comparing to translations from Llama 3 in response to text, we find that our distillation loss leads us to preserve a negative behaviour - for both Chinese and Japanese Llama 3 appears to have a strong bias towards generating translations in Pinyin and Romanji, rather than the expected native script. This leads to especially poor results in these languages. This highlights the dependence of the DiVA method on the strength of the base LLM, but may be easily addressed by updating to <a href="https://ai.meta.com/blog/meta-llama-3-1/">Llama 3.1</a>
 	      </p>
             </div>
 	    <img src="./static/emote.svg" alt="Emotion Recognition results on MELD and IEMOCAP. DiVA significantly (0.05) outperforms SALMONN and Qwen Audio." style="height: 30vw;">
             <div class="content has-text-justified">
               <p>
-		Training Pipeline for Assistant Distillation, <span style="color: #B83A4B">Red</span> modules are trainable while <span style="color: #67AFD2">Blue</span> are frozen pretrained modules.
+		For emotion classification, we prompt each model with the instructions <i>Respond in a single word what emotion the input exhibits. If there is no clear emotion, respond 'Neutral'.</i>. To use each model as a classifier, we follow <a href="https://github.com/hendrycks/test/blob/master/evaluate.py">MMLU</a> and take the log-probabilities assigned to each possible label them and take the most likely token as the models prediction.
+
+<br/> <br/>
+		
+DiVA performs significantly better than both baselines on both the MELD benchmark, sourced from television, and IEMOCAPS, which operates over recorded conversations. 
+In comparison to DiVA, both baseline models struggle to predict a diverse array of labels. Qwen-Audio predicts the emotion as Sadness for greater than 90% of inputs for both MELD and IEMOCAPS, while SALMONN behaves similar with Neutral predictions.
+
+<br/> <br/>
+
+These results are quite surprising given that DiVA is trained only without explicit emotion supervision. However, many examples in both IEMOCAPS and MELD communicate emotion through both text and audio signals which may confound how well these evaluations capture true sociophonetic signal. This highlights the need for more truly multimodal tests of speech LMs especially as they become more prevalent.
 	      </p>
             </div>
           </div>
@@ -242,7 +255,32 @@
       </div>
     </section>
 
-    <section class="section" id="BibTeX">
+<section class="section" style="background-color:#ffffff">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths">
+          <h2 class="title is-3">Looking Forward</h2>
+          <div class="content has-text-justified">
+            <p>
+	      We built DiVA with a few different principles to make it more than just a single fixed model and as a foundation for future speech LM research.
+              </p><ol type="1">
+                <li><b>Fully Open</b>. <span style="font-size: 95%;">We use entirely open data that is permissively licensed so that both academic and industry researchers can build on DiVA for their work. Models which use GPT or other closed-source models on the other hand live in a questionable legal status since the terms of service of most platform providers forbid training on model outputs. Furthermore, unlike prior models, we release DiVAs full training code, not just evaluation code so that it is easier for future works to build their own DiVAs! </span></li>
+                <li><b>Accessible to Train</b>. <span style="font-size: 95%;">One advantage of our distillation loss is that it enables us to get strong results, comparable to Qwen Audio for Speech, with an order of magnitude less data. This means the model trains in under a day. By implementing in Levanter, we are able to leverage both TPU and GPU resources. For example, all hardware used for training DiVA was accessed fully under the Google supported TPU Research Cloud which is generously available to researchers broadly.<br/><br/>
+
+		This not only expands reproducibility, but also means DiVA can be quickly and affordably applied to newly released text-only LLMs. We feel this is especially important given the increasing and exciting frequency of release of new capable models.</span></li>
+                <li><b>End-To-End Differentiable</b>. <span style="font-size: 95%;">Models that can accept speech directly as input have the potential to simplify and accelerate inference, reduce annotation costs, and capture the rich social information inevitably lost by ASR. We hope by making it easier to fuse existing capable models into end-to-end differentiable pipeline LLM research can expand more easily to the complexities of human speech.</span></li>
+              </ol>  
+           <p></p>
+  
+          </div>
+        </div>
+      </div>
+        
+    </div>
+  </section>
+    
+    <section class="section" id="BibTeX" style="background-color:#f5f5f5">
       <div class="container is-max-desktop content">
 	<h2 class="title">BibTeX</h2>
 	<pre><code>
