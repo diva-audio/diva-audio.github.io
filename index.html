@@ -115,7 +115,7 @@
 	      
               <div class="is-size-5 publication-authors">
 		<span class="author-block">
-		  <a href="https://williamheld.com/">Will Held</a><sup><span title="Project Lead, Georgia Institute of Technology & Stanford University" alt="Project Lead, Georgia Institute of Techology & Stanford University">*</span></sup>,</span>
+		  <a href="https://williamheld.com/">Will Held</a><sup><span title="Project Lead, Georgia Institute of Technology & Stanford University" alt="Project Lead, Georgia Institute of Technology & Stanford University">*</span></sup>,</span>
 		<span class="author-block"><a href="https://yocodeyo.github.io/">Ella Li</a><sup><span title="Evaluation Co-Author, National University of Singapore" alt="Evaluation Coauthor, National University of Singapore">†<span></sup>,</span>
 		  <span class="author-block"><a href="https://michryan.com/">Michael Ryan</a><sup><span title="Evaluation Co-Author, Stanford University" alt="Evaluation Coauthor, Stanford University">†<span></sup>,</span>
 		    <span class="author-block"><a href="https://wyshi.github.io/">Weiyan Shi</a><sup><span title="Evaluation Co-Author, Stanford University" alt="Evaluation Coauthor, Stanford University">†<span></sup>,</span>
@@ -200,7 +200,7 @@
 		Training Pipeline for Assistant Distillation, <span style="color: #B83A4B">Red</span> modules are trainable while <span style="color: #67AFD2">Blue</span> are frozen pretrained modules.
 		<br/><br/>
 
-		Large Language Models are increasingly aligned to provide a wide range of assistant capabilities, but only to text inputs. On the other hand, post-hoc early fusion with massively multitask finetuning has been <a href="https://arxiv.org/abs/2310.13289">observed to cause forgetting</a>. We merge the capabilites of an existing ASR model with an existing LLM into a single differentiable model with distillation. Similar to <a href="https://arxiv.org/abs/2209.15189">context distillation</a>, this preserves the models core capabilities while adding native speech support that simplifies and <a href="https://arxiv.org/abs/2304.08467">accelerates inference</a>.
+		Large Language Models are increasingly aligned to provide a wide range of assistant capabilities, but only to text inputs. On the other hand, post-hoc early fusion with massively multitask finetuning has been <a href="https://arxiv.org/abs/2310.13289">observed to cause forgetting</a>. We merge the capabilities of an existing ASR model with an existing LLM into a single differentiable model with distillation. Similar to <a href="https://arxiv.org/abs/2209.15189">context distillation</a>, this preserves the models core capabilities while adding native speech support that simplifies and <a href="https://arxiv.org/abs/2304.08467">accelerates inference</a>.
             </div>
           </div>
 	</div>        
@@ -223,7 +223,7 @@
               <p>
 		Evaluation results on a large general purpose QA benchmark [<a href="https://arxiv.org/abs/2304.13689">HeySQUAD</a>] and a smaller benchmark evaluating the robustness of Speech LMs to accent and dialectal variation [<a href="https://aclanthology.org/2021.findings-emnlp.281/">Spoken Dialect QA</a>]. DiVA significantly improves (P<0.05) over the baselines by at least 10% (+5 <a href="https://arxiv.org/abs/2402.11161v2">PANDA</a>) across both benchmarks and all accents. However, it is unclear whether lower accuracy can be directly attributable to catastrophic forgetting. We qualitatively explore this question by labeling a sample of 50 responses from the HeySQUAD dataset for whether the responses include even an attempted answer relevant to the task.
 <br/> <br/>
-		Qwen Audio shows signs of severe forgetting, with 30% of responses ignoring the prompt instructions entirely and insead transcribing the question e.g. <i>"The citation for the Pearson v. Society of Sisters case is What is the citation for the Pearson v. Society of Sisters case?"</i>. By comparison, SALMONN, which takes inference time interventions to reduce overfitting by partially ablating the LoRA modules learned for the base LLM, sees reduced overfitting with only 8% of model responses ignoring the prompt and instead transcribing. DiVA sees no cases where the model ignores the prompt, ironically despit being trained only on transcription data. 
+		<a href="https://arxiv.org/abs/2311.07919">Qwen Audio</a> shows signs of severe forgetting, with 30% of responses ignoring the prompt instructions entirely and instead transcribing the question e.g. <i>"The citation for the Pearson v. Society of Sisters case is What is the citation for the Pearson v. Society of Sisters case?"</i>. By comparison, <a href="https://arxiv.org/abs/2310.13289">SALMONN<\a>, which takes inference time interventions to reduce overfitting by partially ablating the LoRA modules learned for the base LLM, sees reduced overfitting with only 8% of model responses ignoring the prompt and instead transcribing. DiVA sees no cases where the model ignores the prompt, ironically despit being trained only on transcription data. 
 	      </p>
             </div>
 	    <img src="./static/translation.svg" alt="Emotion Recognition results on MELD and IEMOCAP. DiVA significantly (0.05) outperforms SALMONN and Qwen Audio." style="height: 30vw;">
@@ -244,7 +244,7 @@ DiVA notably performs poorly in Chinese and Japanese. Inspecting outputs and com
 <br/> <br/>
 		
 DiVA performs significantly better than both baselines on both the MELD benchmark, sourced from television, and IEMOCAPS, which operates over recorded conversations. 
-In comparison to DiVA, both baseline models struggle to predict a diverse array of labels. Qwen-Audio predicts the emotion as Sadness for greater than 90% of inputs for both MELD and IEMOCAPS, while SALMONN behaves similar with Neutral predictions.
+In comparison to DiVA, both baseline models struggle to predict a diverse array of labels. Qwen-Audio predicts the emotion of Sadness for greater than 90% of inputs for both MELD and IEMOCAPS, while SALMONN behaves similarly with Neutral predictions.
 
 <br/> <br/>
 
@@ -267,11 +267,11 @@ These results are quite surprising given that DiVA is trained only without expli
             <p>
 	      We built DiVA with a few different principles to make it more than just a single fixed model and as a foundation for future speech LM research.
               </p><ol type="1">
-                <li><b>Fully Open</b>. <span style="font-size: 95%;">We use entirely open data that is permissively licensed so that both academic and industry researchers can build on DiVA for their work. Models which use GPT or other closed-source models on the other hand live in a questionable legal status since the terms of service of most platform providers forbid training on model outputs. Furthermore, unlike prior models, we release DiVAs full training code, not just evaluation code so that it is easier for future works to build their own DiVAs! </span></li>
+                <li><b>Fully Open</b>. <span style="font-size: 95%;">We use entirely open data that is permissively licensed so that both academic and industry researchers can build on DiVA for their work. Models that use GPT or other closed-source models, on the other hand, live in a questionable legal status since the terms of service of most platform providers forbid training on model outputs. Furthermore, unlike prior models, we release DiVAs full training code, not just evaluation code so that it is easier for future works to build their own DiVAs! </span></li>
                 <li><b>Accessible to Train</b>. <span style="font-size: 95%;">One advantage of our distillation loss is that it enables us to get strong results, comparable to Qwen Audio for Speech, with an order of magnitude less data. This means the model trains in under a day. By implementing in Levanter, we are able to leverage both TPU and GPU resources. For example, all hardware used for training DiVA was accessed fully under the Google supported TPU Research Cloud which is generously available to researchers broadly.<br/><br/>
 
 		This not only expands reproducibility, but also means DiVA can be quickly and affordably applied to newly released text-only LLMs. We feel this is especially important given the increasing and exciting frequency of release of new capable models.</span></li>
-                <li><b>End-To-End Differentiable</b>. <span style="font-size: 95%;">Models that can accept speech directly as input have the potential to simplify and accelerate inference, reduce annotation costs, and capture the rich social information inevitably lost by ASR. We hope by making it easier to fuse existing capable models into end-to-end differentiable pipeline LLM research can expand more easily to the complexities of human speech.</span></li>
+                <li><b>End-To-End Differentiable</b>. <span style="font-size: 95%;">Models that can accept speech directly as input have the potential to simplify and accelerate inference, reduce annotation costs, and capture the rich social information inevitably lost by ASR. We hope by making it easier to fuse existing capable models into an end-to-end differentiable pipeline, LLM research can expand more easily to the complexities of human speech.</span></li>
               </ol>  
            <p></p>
   
@@ -310,7 +310,7 @@ These results are quite surprising given that DiVA is trained only without expli
 		  Commons Attribution-ShareAlike 4.0 International License</a>.
               </p>
               <p>
-		This source code of this website is borrowed from <a
+		The source code of this website is borrowed from <a
 								    href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
               </p>
             </div>
