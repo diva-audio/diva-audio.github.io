@@ -213,13 +213,15 @@
             <h2 class="title is-3">Evaluation</h2>
 	    <div class="content has-text-justified">
               <p>
-		We assess our model on knowledge focused Spoken Question Answering 
+		We assess our model on two capabilities that should transfer well directly from the text LLM, Spoken Question Answering and Translation. We also test on one capability that more directly relies on understanding tone, Emotion Recognition. While these results numerically are quite strong given that we do not directly train on any of these tasks in the speech domain, we encourage readers to draw their own conclusions using the interactive demo comparing models above! 
 	      </p>
             </div>
 	    <img src="./static/qa.svg" alt="QA results on Spoken Dialect QA and HeySQUAD. DiVA significantly (0.05) outperforms SALMONN and Qwen Audio." style="height: 30vw;">
             <div class="content has-text-justified">
               <p>
-		Training Pipeline for Assistant Distillation, <span style="color: #B83A4B">Red</span> modules are trainable while <span style="color: #67AFD2">Blue</span> are frozen pretrained modules.
+		Evaluation results on a large general purpose QA benchmark [<a href="https://arxiv.org/abs/2304.13689">HeySQUAD</a>] and a smaller benchmark evaluating the robustness of Speech LMs to accent and dialectal variation [<a href="https://aclanthology.org/2021.findings-emnlp.281/">Spoken Dialect QA</a>]. DiVA significantly improves (P<0.05) over the baselines by at least 10% (+5 <a href="https://arxiv.org/abs/2402.11161v2">PANDA</a>) across both benchmarks and all accents. However, it is unclear whether lower accuracy can be directly attributable to catastrophic forgetting. We qualitatively explore this question by labeling a sample of 50 responses from the HeySQUAD dataset for whether the responses include even an attempted answer relevant to the task.
+<br/> <br/>
+		Qwen Audio shows signs of severe forgetting, with 30% of responses ignoring the prompt instructions entirely and insead transcribing the question e.g. <i>"The citation for the Pearson v. Society of Sisters case is What is the citation for the Pearson v. Society of Sisters case?"</i>. By comparison, SALMONN, which takes inference time interventions to reduce overfitting by partially ablating the LoRA modules learned for the base LLM, sees reduced overfitting with only 8% of model responses ignoring the prompt and instead transcribing. DiVA sees no cases where the model ignores the prompt, ironically despit being trained only on transcription data. 
 	      </p>
             </div>
 	    <img src="./static/translation.svg" alt="Emotion Recognition results on MELD and IEMOCAP. DiVA significantly (0.05) outperforms SALMONN and Qwen Audio." style="height: 30vw;">
@@ -260,6 +262,8 @@
 	<div class="columns is-centered">
 	  <div class="column is-8">
             <div class="content">
+	      <p> We appreciate <a href="https://x.com/dlwh">David Hall</a> for his advice and code review on the core Levanter Framework and implementation of Audio Infrastructure in Levanter. We additionally appreciate the <a href="https://sites.research.google/trc/about/">TPU Research Cloud</a> for their free computing support without which this projet would not be possible. Further computing support was provided by <a href="https://hai.stanford.edu/call-google-cloud-credit-proposals">Stanford HAI Google Cloud Credit Program</a>
+	      
               <p>
 		This website is licensed under a <a rel="license"
                                                     href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
