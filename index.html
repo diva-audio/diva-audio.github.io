@@ -260,15 +260,17 @@ In comparison to DiVA, the baseline models struggle to predict a diverse array o
 <br/> <br/>
 
 These results are quite surprising given that DiVA is trained only without explicit emotion supervision. However, many examples in both IEMOCAPS and MELD communicate emotion through both text and audio signals which may confound how well these evaluations capture true sociophonetic signal. This highlights a possible need for more carefully designed emotion recognition tests.
-
-
+	    </p>
+            </div>
 	    <img src="./static/sarc-and-humor.svg" alt="Emotion Recognition results on MELD and IEMOCAP. DiVA significantly (0.05) outperforms SALMONN and Qwen Audio." style="height: 30vw;">
+	    <div class="content has-text-justified">		
+              <p>
+		On the other hand, DiVA, and most other models, perform relatively poorly on Sarcasm and Humor detection tasks! Only one model performs signficantly above chance on either of these tasks, Qwen Audio on Humor Detection. Interestingly, Qwen 2 Audio regresses on this task. Results here show that all Speech LLMs likely have a ways to go to understand more nuanced sociophonetic communication.
 	      </p>
+	    </p>
             </div>
           </div>
 	</div>
-
-	On the other hand, DiVA, and most other models, perform relatively poorly on Sarcasm and Humor detection tasks! Only one model performs signficantly above chance on either of these tasks, Qwen Audio on Humor Detection. Interestingly, Qwen 2 Audio regresses on this task. Results here show that all Speech LLMs likely have a ways to go to understand more nuanced sociophonetic communication.
 	
 <br/> <br/>
         
