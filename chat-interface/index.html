@@ -1,17 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
+    <meta charset="utf-8">
+    <title>DiVA (Distilled Voice Assistant)</title>
+    <meta name="description" content="Distilling an End-to-End Voice Assistant from Speech Recognition Data Using Pretrained Models.">
+
+    <!-- Facebook -->
+    <meta property="og:url" content="https://diva-audio.github.io">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="DiVA (Distilled Voice Assistant)">
+    <meta property="og:description" content="Distilling an End-to-End Voice Assistant from Speech Recognition Data Using Pretrained Models.">
+    <meta property="og:image" content="https://diva-audio.github.io/static/images/hero.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="diva-audio.github.io">
+    <meta property="twitter:url" content="https://diva-audio.github.io">
+    <meta name="twitter:title" content="DiVA (Distilled Voice Assistant)">
+    <meta name="twitter:description" content="Distilling an End-to-End Voice Assistant from Speech Recognition Data Using Pretrained Models.">
+    <meta name="twitter:image" content="https://diva-audio.github.io/static/images/hero.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="../static/css/bulma.min.css">
+    <link rel="stylesheet" href="../static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="../static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="../static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="../static/js/fontawesome.all.min.js"></script>
+    <script src="../static/js/bulma-carousel.min.js"></script>
+    <script src="../static/js/bulma-slider.min.js"></script>
+    <script src="../static/js/index.js"></script>
     <script
 	type="module"
 	src="https://gradio.s3-us-west-2.amazonaws.com/5.0.2/gradio.js"
       ></script>
-    <gradio-app src="//https://myers-steal-tigers-victoria.trycloudflare.com/"></gradio-app>
+  </head>
+  <style>
+
+    .SAmE {
+        color: #D55E00; /* myorange */
+        font-family: monospace;
+        font-weight: bold;
+    }
+    .SAsE {
+        color: #2F5596; /* mydarkblue */
+        font-family: monospace;
+        font-weight: bold;
+    }
+    .highlight {
+        background-color: #F9CD69;
+        font-weight: bold;
+    }
+    .quote {
+	color: #073ea2;
+	font-style: italic; 
+	font-size: 1.2em;
+	max-width: 50%;
+	margin: 0 auto; 
+	font-weight: bold; 
+	margin-bottom: 20px;
+	text-align: center;
+    }
+    table {
+	max-width: 60%;
+	border-collapse: collapse;
+	margin: 0 auto;
+	margin-top: 20px;
+	text-align: center;
+    }
+    th, td {
+	border: 1px solid #ddd;
+	padding: 8px;
+	font-size: 14px;
+    }
+    th {
+	background-color: #f2f2f2;
+	color: #333;
+    }
+    tr:nth-child(even) {
+	background-color: #f9f9f9;
+    }
+    td:nth-child(2), td:nth-child(3) {
+	text-align: center;
+    }
+    .dashline {
+	border-top: 1px dashed #999;
+    }
+    caption {
+	caption-side: bottom;
+	font-size: 0.9em;
+	padding-top: 10px;
+	color: #555;
+    }
+    .quote-text {
+	color: #073ea2;
+	font-weight: bold;
+    }
+  </style>
+
+  <body>
+    
+        <section class="section">
+      <div class="container">
+	<!-- Abstract. -->
+	<div class="columns is-centered has-text-centered">
+          <div class="column is-six-fifths">
+            <h2 class="title is-3"><b style="color:#820000">Di</b>stilled <b style="color:#820000">V</b>oice <b style="color:#820000">A</b>ssistant Chat Demo</h2>
+	  </div>
+	</div>
+	    <gradio-app title="gradio demo" src="https://myers-steal-tigers-victoria.trycloudflare.com/"></gradio-app>
+      </div>
+    </section>
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+	<h2 class="title">BibTeX</h2>
+	<pre><code>
+	    @misc{held2024diva,
+            author="Held, Will and Li, Ella and Ryan, Michael and Shi, Weiyan and Zhang, Yanzhe and Yang, Diyi",
+            title="Distilling an End-to-End Voice Assistant from Speech Recognition Data",
+            year="2024",
+            publisher="HuggingFace",
+	    }
+	</code></pre>
+      </div>
+      	      <div class="column has-text-centered">
+		<div class="publication-links">
+		  <!-- PDF Link. -->
+		  <span class="link-block">
+		    <a href="https://arxiv.org/abs/2410.02678"
+                       class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+			<i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper Link</span>
+                    </a>
+                    <a href="https://huggingface.co/WillHeld/DiVA-llama-3-v0-8b"
+                       class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+			<i class="fas fa-network-wired"></i>
+                      </span>
+                      <span>Model Link</span>
+                    </a>
+		    <!-- Code Link. -->
+		    <span class="link-block">
+                      <a href="https://colab.research.google.com/drive/1Ab3z_BjM_FblAyne7W7hbnT6gLWOhram?usp=sharing"
+			 class="external-link button is-normal is-rounded is-dark">
+			<span class="icon">
+			  <i class="far fa-chart-bar"></i>
+			</span>
+			<span>Evaluation Notebook</span>
+                      </a>
+		    </span>
+		    <!-- Dataset Link. -->
+		    <span class="link-block">
+                      <a href="https://github.com/Helw150/levanter/blob/will/distill/src/levanter/models/via.py"
+			 class="external-link button is-normal is-rounded is-dark">
+			<span class="icon">
+			  <i class="fab fa-github"></i>
+			</span>
+			<span>Training Code</span>
+                      </a>
+		</div>
+    </section>
+
   </body>
 </html>
